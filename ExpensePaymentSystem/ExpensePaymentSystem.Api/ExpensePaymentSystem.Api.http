@@ -1,0 +1,6 @@
+@ExpensePaymentSystem.Api_HostAddress = http://localhost:5188
+
+GET {{ExpensePaymentSystem.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

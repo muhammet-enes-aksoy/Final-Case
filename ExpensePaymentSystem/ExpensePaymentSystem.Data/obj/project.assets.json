@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\oznur\\.nuget\\packages\\": {}
+    "C:\\Users\\Enes\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\oznur\\OneDrive\\Masaüstü\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\ExpensePaymentSystem.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\ExpensePaymentSystem.Data.csproj",
       "projectName": "ExpensePaymentSystem.Data",
-      "projectPath": "C:\\Users\\oznur\\OneDrive\\Masaüstü\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\ExpensePaymentSystem.Data.csproj",
-      "packagesPath": "C:\\Users\\oznur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\oznur\\OneDrive\\Masaüstü\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\obj\\",
+      "projectPath": "C:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\ExpensePaymentSystem.Data.csproj",
+      "packagesPath": "C:\\Users\\Enes\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\oznur\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Enes\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

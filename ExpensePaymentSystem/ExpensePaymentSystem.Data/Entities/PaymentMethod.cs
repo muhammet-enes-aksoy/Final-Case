@@ -12,7 +12,7 @@ public class PaymentMethod : BaseEntityWithId
     public string PaymentMethodType { get; set; }   
 }
 
-public class PaymentMethodClaimConfiguration : IEntityTypeConfiguration<PaymentMethod>
+public class PaymentMethodConfiguration : IEntityTypeConfiguration<PaymentMethod>
 {
     public void Configure(EntityTypeBuilder<PaymentMethod> builder)
     {

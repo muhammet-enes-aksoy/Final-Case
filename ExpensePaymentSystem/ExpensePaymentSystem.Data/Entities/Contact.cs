@@ -11,7 +11,6 @@ public class Contact : BaseEntityWithId
 {
     public int UserId { get; set; }
     public virtual User User { get; set; }
-    
     public string ContactType { get; set; }
     public string Information { get; set; }
     public bool IsDefault { get; set; }

@@ -9,8 +9,7 @@ namespace ExpensePaymentSystem.Data.Entity;
 [Table("PaymentMethod", Schema = "dbo")]
 public class PaymentMethod : BaseEntityWithId
 {
-    public string PaymentMethodType { get; set; }
-    
+    public string PaymentMethodType { get; set; }   
 }
 
 public class PaymentMethodClaimConfiguration : IEntityTypeConfiguration<PaymentMethod>
@@ -24,8 +23,6 @@ public class PaymentMethodClaimConfiguration : IEntityTypeConfiguration<PaymentM
         builder.Property(x => x.IsActive).IsRequired(true).HasDefaultValue(true);
     
         builder.Property(x => x.PaymentMethodType).IsRequired(true).HasMaxLength(50);
-
-        //builder.HasIndex(x => x.UserName).IsUnique(true);
 
     }
 }

@@ -9,13 +9,14 @@ namespace ExpensePaymentSystem.Data.Entity;
 [Table("User", Schema = "dbo")]
 public class User : BaseEntityWithId
 {
-
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string Role { get; set; }
     
     public virtual List<Contact> Contacts { get; set; }
     public virtual List<Account> Accounts { get; set; }
+    public virtual List<Address> Addresses { get; set; }
+    public virtual List<ExpenseClaim> ExpenseClaims { get; set; }
 }
 
 public class UserConfiguration : IEntityTypeConfiguration<User>

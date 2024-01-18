@@ -16,11 +16,11 @@ public class ExpenseClaim : BaseEntityWithId
     public int PaymentMethodId { get; set; }
     public virtual PaymentMethod PaymentMethod { get; set; }
     public string PaymentLocation { get; set; }
-    public int ReceiptNumber { get; set; }
+    public string ReceiptNumber { get; set; }
     public string Status { get; set; }
     public string StatusDescription { get; set; }
-    public string IsActive { get; set; }
-    public string Amount { get; set; }
+    public bool IsProcessed { get; set; }
+    public double Amount { get; set; }
     public DateTime ClaimDate { get; set; }
     public DateTime ConfirmDate { get; set; }
     
@@ -39,8 +39,5 @@ public class ExpenseClaimConfiguration : IEntityTypeConfiguration<ExpenseClaim>
         builder.Property(x => x.CategoryId).IsRequired(true).HasMaxLength(50);
         builder.Property(x => x.UserId).IsRequired(true).HasMaxLength(50);
         builder.Property(x => x.PaymentMethodId).IsRequired(true).HasMaxLength(30);
-
-        //builder.HasIndex(x => x.UserName).IsUnique(true);
-
     }
 }

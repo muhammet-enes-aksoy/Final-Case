@@ -10,15 +10,13 @@ namespace ExpensePaymentSystem.Data.Entity;
 public class Category : BaseEntityWithId
 {
 
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string Role { get; set; }
+    public string CategoryType { get; set; }
     
 }
 
-public class CategoryConfiguration : IEntityTypeConfiguration<User>
+public class CategoryConfiguration : IEntityTypeConfiguration<Category>
 {
-    public void Configure(EntityTypeBuilder<User> builder)
+    public void Configure(EntityTypeBuilder<Category> builder)
     {
         builder.Property(x => x.InsertDate).IsRequired(true);
         builder.Property(x => x.InsertUserId).IsRequired(true);
@@ -26,10 +24,7 @@ public class CategoryConfiguration : IEntityTypeConfiguration<User>
         builder.Property(x => x.UpdateUserId).IsRequired(false);
         builder.Property(x => x.IsActive).IsRequired(true).HasDefaultValue(true);
     
-        builder.Property(x => x.FirstName).IsRequired(true).HasMaxLength(50);
-        builder.Property(x => x.LastName).IsRequired(true).HasMaxLength(50);
-        builder.Property(x => x.Role).IsRequired(true).HasMaxLength(30);
-
+        builder.Property(x => x.CategoryType).IsRequired(true).HasMaxLength(50);
         //builder.HasIndex(x => x.UserName).IsUnique(true);
 
     }

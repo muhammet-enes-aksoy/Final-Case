@@ -26,9 +26,9 @@ public class ExpenseClaim : BaseEntityWithId
     
 }
 
-public class ExpenseClaimConfiguration : IEntityTypeConfiguration<User>
+public class ExpenseClaimConfiguration : IEntityTypeConfiguration<ExpenseClaim>
 {
-    public void Configure(EntityTypeBuilder<User> builder)
+    public void Configure(EntityTypeBuilder<ExpenseClaim> builder)
     {
         builder.Property(x => x.InsertDate).IsRequired(true);
         builder.Property(x => x.InsertUserId).IsRequired(true);
@@ -36,9 +36,9 @@ public class ExpenseClaimConfiguration : IEntityTypeConfiguration<User>
         builder.Property(x => x.UpdateUserId).IsRequired(false);
         builder.Property(x => x.IsActive).IsRequired(true).HasDefaultValue(true);
     
-        builder.Property(x => x.FirstName).IsRequired(true).HasMaxLength(50);
-        builder.Property(x => x.LastName).IsRequired(true).HasMaxLength(50);
-        builder.Property(x => x.Role).IsRequired(true).HasMaxLength(30);
+        builder.Property(x => x.CategoryId).IsRequired(true).HasMaxLength(50);
+        builder.Property(x => x.UserId).IsRequired(true).HasMaxLength(50);
+        builder.Property(x => x.PaymentMethodId).IsRequired(true).HasMaxLength(30);
 
         //builder.HasIndex(x => x.UserName).IsUnique(true);
 

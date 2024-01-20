@@ -23,7 +23,9 @@ public class GetAllAccountsQueryHandler : IRequestHandler<GetAllAccountsQuery, A
                    CancellationToken cancellationToken)
     {
         var list = await dbContext.Set<Account>()
-            .Include(x => x.User).ToListAsync(cancellationToken);
+            .Where(x => x.IsActive)
+            .Include(x => x.User)
+            .ToListAsync(cancellationToken);
         
         var mappedList = mapper.Map<List<Account>, List<AccountResponse>>(list);
          return new ApiResponse<List<AccountResponse>>(mappedList);

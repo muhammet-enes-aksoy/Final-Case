@@ -25,8 +25,9 @@ public class GetAccountByIdQueryHandler : IRequestHandler<GetAccountByIdQuery, A
                CancellationToken cancellationToken)
     {
         var entity =  await dbContext.Set<Account>()
+            .Where(x => x.IsActive)
             .Include(x => x.User)
-            .FirstOrDefaultAsync(x => x.AccountNumber == request.Id, cancellationToken);
+            .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
 
         if (entity == null)
         {

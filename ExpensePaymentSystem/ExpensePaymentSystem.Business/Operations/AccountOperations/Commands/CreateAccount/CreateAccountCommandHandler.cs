@@ -25,13 +25,13 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand,
     public async Task<ApiResponse<AccountResponse>> Handle(CreateAccountCommand request,
                CancellationToken cancellationToken)
     {
-        if (!await dbContext.Set<User>().AnyAsync(c => c.UserNumber.Equals(request.Model.UserId), cancellationToken))
+        if (!await dbContext.Set<User>().AnyAsync(c => c.Id.Equals(request.Model.UserId), cancellationToken))
             return new ApiResponse<AccountResponse>(AccountMessages.CustomerNotExists);
 
         var entity = mapper.Map<Account>(request.Model);
 
         entity.AccountNumber = new Random().Next(1000000, 9999999);
-
+        
         await dbContext.Set<Account>().AddAsync(entity, cancellationToken);
         await dbContext.SaveChangesAsync(cancellationToken);
 

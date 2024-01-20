@@ -27,7 +27,8 @@ public class GetAccountsByParameterQueryHandler : IRequestHandler<GetAccountsByP
                            (request.IBAN == null || acc.IBAN.ToUpper().Contains(request.IBAN.ToUpper())));
 
         var list =  await dbContext.Set<Account>()
-            .Include(x => x.Name)
+            .Where(x => x.IsActive)
+            .Include(x => x.User)
             .Where(predicate).ToListAsync(cancellationToken);
         
         var mappedList = mapper.Map<List<Account>, List<AccountResponse>>(list);

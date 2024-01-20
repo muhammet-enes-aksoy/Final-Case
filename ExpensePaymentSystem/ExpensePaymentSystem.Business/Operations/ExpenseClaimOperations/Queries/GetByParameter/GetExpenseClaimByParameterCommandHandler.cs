@@ -32,6 +32,8 @@ public class GetExpenseClaimByParameterQueryHandler : IRequestHandler<GetExpense
 
         var list = await context.Set<ExpenseClaim>()
             .Include(x => x.User)
+            .Include(x => x.Category)
+            .Include(x => x.PaymentMethod)
             .Where(predicate).ToListAsync(cancellationToken);
 
         var mappedList = mapper.Map<List<ExpenseClaim>, List<ExpenseClaimResponse>>(list);

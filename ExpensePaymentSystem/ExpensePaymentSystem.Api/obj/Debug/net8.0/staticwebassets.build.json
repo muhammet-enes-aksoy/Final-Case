@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "xJLimCo4zBduFEaCxtVe2LuaSy8ypSS8RV0P6YtC+bs=",
+  "Source": "ExpensePaymentSystem.Api",
+  "BasePath": "_content/ExpensePaymentSystem.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

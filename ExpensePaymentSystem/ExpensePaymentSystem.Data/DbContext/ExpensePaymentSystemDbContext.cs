@@ -27,6 +27,7 @@ public class ExpensePaymentSystemDbContext : DbContext
         modelBuilder.ApplyConfiguration(new ContactConfiguration());
         modelBuilder.ApplyConfiguration(new ExpenseClaimConfiguration());
         modelBuilder.ApplyConfiguration(new PaymentMethodConfiguration());
+        modelBuilder.ApplyConfiguration(new UserConfiguration());
         base.OnModelCreating(modelBuilder);
     }
     

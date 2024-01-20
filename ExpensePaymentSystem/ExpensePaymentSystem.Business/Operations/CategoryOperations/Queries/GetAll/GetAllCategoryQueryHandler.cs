@@ -22,9 +22,7 @@ public class GetAllCategorysQueryHandler : IRequestHandler<GetAllCategoriesQuery
     public async Task<ApiResponse<List<CategoryResponse>>> Handle(GetAllCategoriesQuery request,
                CancellationToken cancellationToken)
     {
-        var list = await dbContext.Set<Category>()
-            .AsNoTracking()
-            .ToListAsync(cancellationToken);
+        var list = await dbContext.Set<Category>().ToListAsync(cancellationToken);
 
         var mappedList = mapper.Map<List<Category>, List<CategoryResponse>>(list);
         return new ApiResponse<List<CategoryResponse>>(mappedList);

@@ -18,8 +18,7 @@ public class GetAccountsByParameterQueryHandler : IRequestHandler<GetAccountsByP
         this.dbContext = dbContext;
         this.mapper = mapper;
     }
-
-     public async Task<ApiResponse<List<AccountResponse>>> Handle(GetAccountsByParameterQuery request,
+    public async Task<ApiResponse<List<AccountResponse>>> Handle(GetAccountsByParameterQuery request,
         CancellationToken cancellationToken)
     {
         var predicate = PredicateBuilder.New<Account>(true);

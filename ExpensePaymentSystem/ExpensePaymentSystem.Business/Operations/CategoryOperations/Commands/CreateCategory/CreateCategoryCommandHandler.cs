@@ -26,7 +26,7 @@ public class CreateCategoryCommandHandler :
     public async Task<ApiResponse<CategoryResponse>> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
     {
         var checkIdentity = await dbContext.Set<Category>()
-        .FindAsync(request.Model.CategoryType, cancellationToken);
+        .FindAsync(request.Model.Id, cancellationToken);
 
         if (checkIdentity != null)
             return new ApiResponse<CategoryResponse>(CategoryMessages.CategoryAlreadyExists);

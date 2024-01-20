@@ -26,7 +26,7 @@ public class CreatePaymentMethodCommandHandler :
     public async Task<ApiResponse<PaymentMethodResponse>> Handle(CreatePaymentMethodCommand request, CancellationToken cancellationToken)
     {
         var checkIdentity = await dbContext.Set<PaymentMethod>()
-        .FindAsync(request.Model.PaymentMethodType, cancellationToken);
+        .FindAsync(request.Model.Id, cancellationToken);
 
         if (checkIdentity != null)
             return new ApiResponse<PaymentMethodResponse>(PaymentMethodMessages.PaymentMethodAlreadyExists);

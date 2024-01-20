@@ -1,0 +1,13 @@
+C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Base\bin\Debug\net8.0\ExpensePaymentSystem.Base.deps.json
+C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Base\bin\Debug\net8.0\ExpensePaymentSystem.Base.dll
+C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Base\bin\Debug\net8.0\ExpensePaymentSystem.Base.pdb
+C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Base\obj\Debug\net8.0\ExpensePaymentSystem.Base.csproj.AssemblyReference.cache
+C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Base\obj\Debug\net8.0\ExpensePaymentSystem.Base.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Base\obj\Debug\net8.0\ExpensePaymentSystem.Base.AssemblyInfoInputs.cache
+C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Base\obj\Debug\net8.0\ExpensePaymentSystem.Base.AssemblyInfo.cs
+C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Base\obj\Debug\net8.0\ExpensePaymentSystem.Base.csproj.CoreCompileInputs.cache
+C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Base\obj\Debug\net8.0\ExpensePaymentSystem.Base.sourcelink.json
+C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Base\obj\Debug\net8.0\ExpensePaymentSystem.Base.dll
+C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Base\obj\Debug\net8.0\refint\ExpensePaymentSystem.Base.dll
+C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Base\obj\Debug\net8.0\ExpensePaymentSystem.Base.pdb
+C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Base\obj\Debug\net8.0\ref\ExpensePaymentSystem.Base.dll

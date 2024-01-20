@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ExpensePaymentSystem.Base.Response;
 using ExpensePaymentSystem.Business.Cqrs;
 using ExpensePaymentSystem.Schema;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace ExpensePaymentSystem.Api.Controllers;
@@ -19,6 +20,7 @@ public class PaymentMethodsController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<List<PaymentMethodResponse>>> Get()
     {
         var operation = new GetAllPaymentMethodsQuery();
@@ -27,6 +29,7 @@ public class PaymentMethodsController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<PaymentMethodResponse>> Get(int id)
     {
         var operation = new GetPaymentMethodByIdQuery(id);
@@ -35,6 +38,7 @@ public class PaymentMethodsController : ControllerBase
     }
 
     [HttpGet("ByParameters")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<List<PaymentMethodResponse>>> GetByParameter(
         [FromQuery] string? PaymentMethodType)
     {
@@ -44,6 +48,7 @@ public class PaymentMethodsController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<PaymentMethodResponse>> Post([FromBody] PaymentMethodRequest PaymentMethod)
     {
         var operation = new CreatePaymentMethodCommand(PaymentMethod);
@@ -52,6 +57,7 @@ public class PaymentMethodsController : ControllerBase
     }
 
     [HttpPut("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse> Put(int id, [FromBody] PaymentMethodRequest PaymentMethod)
     {
         var operation = new UpdatePaymentMethodCommand(id, PaymentMethod);
@@ -60,6 +66,7 @@ public class PaymentMethodsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse> Delete(int id)
     {
         var operation = new DeletePaymentMethodCommand(id);

@@ -18,7 +18,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpGet]
-    [Authorize(Roles = "admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<List<CategoryResponse>>> Get()
     {
         var operation = new GetAllCategoriesQuery();
@@ -27,7 +27,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    [Authorize(Roles = "admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<CategoryResponse>> Get(int id)
     {
         var operation = new GetCategoryByIdQuery(id);
@@ -36,7 +36,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpGet("ByParameters")]
-    [Authorize(Roles = "admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<List<CategoryResponse>>> GetByParameter(
         [FromQuery] string? CategoryType)
     {
@@ -46,7 +46,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpPost]
-    [Authorize(Roles = "admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<CategoryResponse>> Post([FromBody] CategoryRequest Category)
     {
         var operation = new CreateCategoryCommand(Category);
@@ -55,7 +55,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    [Authorize(Roles = "admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse> Put(int id, [FromBody] CategoryRequest Category)
     {
         var operation = new UpdateCategoryCommand(id, Category);
@@ -64,7 +64,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    [Authorize(Roles = "admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse> Delete(int id)
     {
         var operation = new DeleteCategoryCommand(id);

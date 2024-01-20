@@ -4,7 +4,7 @@ using ExpensePaymentSystem.Schema;
 using FluentValidation;
 
 
-namespace Vb.Business.Features.Customers.Commands.Validations;
+namespace ExpensePaymentSystem.Business.Validator;
 
 public class UserValidator : AbstractValidator<UserRequest>
 {
@@ -14,6 +14,5 @@ public class UserValidator : AbstractValidator<UserRequest>
         RuleFor(x => x.LastName).NotEmpty().MaximumLength(50);
         RuleFor(x => x.IdentityNumber).NotEmpty().MaximumLength(11).WithName(UserMessages.IdentityNumberDisplayedName);
 
-        RuleForEach(x => x.Addresses).SetValidator(new CreateAddressValidator());
     }
 }

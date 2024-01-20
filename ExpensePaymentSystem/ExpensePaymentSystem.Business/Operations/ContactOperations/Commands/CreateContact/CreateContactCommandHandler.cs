@@ -29,7 +29,7 @@ public class CreateContactCommandHandler : IRequestHandler<CreateContactCommand,
                     : true;
 
         if (!isValidToAdd)
-            return new ApiResponse<ContactResponse>(string.Format(ContactMessages.DefaultContactAlreadyExistsForCustomerId, request.Model.UserId));
+            return new ApiResponse<ContactResponse>(string.Format(ContactMessages.DefaultContactAlreadyExistsForUserId, request.Model.UserId));
 
         var contact = mapper.Map<Contact>(request.Model);
 

@@ -31,7 +31,7 @@ public class UpdateContactCommandHandler : IRequestHandler<UpdateContactCommand,
         // true; if the customer already has a default contact
 
         if (hasDefaultContact && request.Model.IsDefault)
-            return new ApiResponse(string.Format(ContactMessages.DefaultContactAlreadyExistsForCustomerId, request.Id));
+            return new ApiResponse(string.Format(ContactMessages.DefaultContactAlreadyExistsForUserId, request.Id));
         // if the customer already has a default contact and the request model is default,
         // just returns a message
 

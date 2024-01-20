@@ -3,11 +3,11 @@ using System.Reflection;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using ExpensePaymentSystem.Data;
-using ExpensePaymentSystem.Business.Cqrs;
 using AutoMapper;
 using ExpensePaymentSystem.Business.Mapper;
-using ExpensePaymentSystem.Business.Validator;
 using Microsoft.OpenApi.Models;
+using ExpensePaymentSystem.Business;
+using MediatR;
 
 namespace ExpensePaymentSystem.Api;
 
@@ -26,15 +26,18 @@ public class Startup
         services.AddDbContext<ExpensePaymentSystemDbContext>(options => options.UseSqlServer(connection));
         //services.AddDbContext<VbDbContext>(options => options.UseNpgsql(connection));
 
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CreateUserCommand).GetTypeInfo().Assembly));
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(AssemblyReference).GetTypeInfo().Assembly));
+
+        //var mapperConfig = new MapperConfiguration(cfg => cfg.AddProfile(new MapperConfig()));
+        //services.AddAutoMapper(typeof(AssemblyReference).GetTypeInfo().Assembly);
+
+        services.AddControllers().AddFluentValidation(x =>
+            x.RegisterValidatorsFromAssemblyContaining<AssemblyReference>());
+
 
         var mapperConfig = new MapperConfiguration(cfg => cfg.AddProfile(new MapperConfig()));
         services.AddSingleton(mapperConfig.CreateMapper());
 
-        services.AddControllers().AddFluentValidation(x =>
-      {
-          x.RegisterValidatorsFromAssemblyContaining<UserValidator>();
-      });
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(c =>
         {

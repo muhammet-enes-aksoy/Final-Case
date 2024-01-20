@@ -11,6 +11,5 @@ public class CategoryRequest : BaseRequest
 public class CategoryResponse : BaseResponse
 {
     public string CategoryType { get; set; }
-    public int Status { get; set; }
 
 }

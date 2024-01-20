@@ -11,10 +11,6 @@ public class UserRequest : BaseRequest
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string Role { get; set; }
-    public virtual List<AddressRequest> Addresses { get; set; }
-    public virtual List<ContactRequest> Contacts { get; set; }
-    public virtual List<AccountRequest> Accounts { get; set; }
-    public virtual List<ExpenseClaim> ExpenseClaims { get; set; }
 }
 public class UserResponse : BaseResponse
 {
@@ -22,10 +18,5 @@ public class UserResponse : BaseResponse
     public string LastName { get; set; }
     public string Role { get; set; }
     public DateTime LastActivityDate { get; set; }
-    public int Status { get; set; }
-
-    public virtual List<Contact> Contacts { get; set; }
-    public virtual List<Account> Accounts { get; set; }
-    public virtual List<Address> Addresses { get; set; }
-    public virtual List<ExpenseClaim> ExpenseClaims { get; set; }
+    
 }

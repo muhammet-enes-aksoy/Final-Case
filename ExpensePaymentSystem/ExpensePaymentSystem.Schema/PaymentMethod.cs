@@ -11,6 +11,5 @@ public class PaymentMethodRequest : BaseRequest
 public class PaymentMethodResponse : BaseResponse
 {
     public string PaymentMethodType { get; set; }
-    public int Status { get; set; }
 
 }

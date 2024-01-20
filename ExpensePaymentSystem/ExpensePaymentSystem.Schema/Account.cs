@@ -8,7 +8,6 @@ public class AccountRequest : BaseRequest
 {
     [JsonIgnore]
     public int AccountNumber { get; set; }
-    
     public int UserId { get; set; }
     public string IBAN { get; set; }
     public decimal Balance { get; set; }

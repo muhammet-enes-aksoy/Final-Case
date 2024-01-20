@@ -21,6 +21,7 @@ public class ExpenseClaimRequest : BaseRequest
     public double Amount { get; set; }
     public DateTime ClaimDate { get; set; }
     public DateTime ConfirmDate { get; set; }
+    public bool IsDefault { get; set; }
 }
 public class ExpenseClaimResponse : BaseResponse
 {
@@ -38,5 +39,6 @@ public class ExpenseClaimResponse : BaseResponse
     public double Amount { get; set; }
     public DateTime ClaimDate { get; set; }
     public DateTime ConfirmDate { get; set; }
+    public bool IsDefault { get; set; }
 
 }

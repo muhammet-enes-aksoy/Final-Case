@@ -6,7 +6,8 @@ namespace ExpensePaymentSystem.Schema;
 public class UserRequest : BaseRequest
 {
     [JsonIgnore]
-    public int Id { get; set; }
+    public int UserNumber { get; set; }
+    public string IdentityNumber { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string Role { get; set; }

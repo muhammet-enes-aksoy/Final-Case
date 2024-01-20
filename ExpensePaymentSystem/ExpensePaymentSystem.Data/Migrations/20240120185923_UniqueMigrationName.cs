@@ -63,7 +63,6 @@ namespace ExpensePaymentSystem.Data.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Role = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    UserNumber = table.Column<int>(type: "int", nullable: false),
                     InsertUserId = table.Column<int>(type: "int", nullable: false),
                     InsertDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateUserId = table.Column<int>(type: "int", nullable: true),
@@ -80,8 +79,10 @@ namespace ExpensePaymentSystem.Data.Migrations
                 schema: "dbo",
                 columns: table => new
                 {
-                    AccountNumber = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: false),
+                    AccountNumber = table.Column<int>(type: "int", nullable: false),
                     IBAN = table.Column<string>(type: "nvarchar(34)", maxLength: 34, nullable: false),
                     Balance = table.Column<decimal>(type: "decimal(18,4)", precision: 18, scale: 4, nullable: false),
                     CurrencyType = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
@@ -95,14 +96,13 @@ namespace ExpensePaymentSystem.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Account", x => x.AccountNumber);
+                    table.PrimaryKey("PK_Account", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Account_User_UserId",
                         column: x => x.UserId,
                         principalSchema: "dbo",
                         principalTable: "User",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -134,8 +134,7 @@ namespace ExpensePaymentSystem.Data.Migrations
                         column: x => x.UserId,
                         principalSchema: "dbo",
                         principalTable: "User",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -163,8 +162,7 @@ namespace ExpensePaymentSystem.Data.Migrations
                         column: x => x.UserId,
                         principalSchema: "dbo",
                         principalTable: "User",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -214,8 +212,7 @@ namespace ExpensePaymentSystem.Data.Migrations
                         column: x => x.UserId,
                         principalSchema: "dbo",
                         principalTable: "User",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -273,13 +270,6 @@ namespace ExpensePaymentSystem.Data.Migrations
                 schema: "dbo",
                 table: "User",
                 column: "IdentityNumber",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_User_UserNumber",
-                schema: "dbo",
-                table: "User",
-                column: "UserNumber",
                 unique: true);
         }
 

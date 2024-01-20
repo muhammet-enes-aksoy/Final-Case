@@ -7,6 +7,8 @@ namespace ExpensePaymentSystem.Schema;
 public class AccountRequest : BaseRequest
 {
     [JsonIgnore]
+    public int Id { get; set; }
+    [JsonIgnore]
     public int AccountNumber { get; set; }
     public int UserId { get; set; }
     public string IBAN { get; set; }
@@ -18,7 +20,6 @@ public class AccountRequest : BaseRequest
 
 public class AccountResponse : BaseResponse
 {
-    public int UserId { get; set; }
     public string UserName { get; set; }
     public int AccountNumber { get; set; }
     public string IBAN { get; set; }

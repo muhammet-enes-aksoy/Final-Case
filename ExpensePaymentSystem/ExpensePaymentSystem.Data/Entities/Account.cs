@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace ExpensePaymentSystem.Data.Entity;
 
 [Table("Account", Schema = "dbo")]
-public class Account : BaseEntity
+public class Account : BaseEntityWithId
 {
     public int UserId { get; set; }
     public virtual User User { get; set; }
@@ -17,7 +17,6 @@ public class Account : BaseEntity
     public string CurrencyType { get; set; }
     public string Name { get; set; }
     public DateTime OpenDate { get; set; }
-
 }
 
 public class AccountConfiguration : IEntityTypeConfiguration<Account>
@@ -42,6 +41,6 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
 
         builder.HasIndex(x => x.UserId);
         builder.HasIndex(x => x.AccountNumber).IsUnique(true);
-        builder.HasKey(x => x.AccountNumber);
+        
     }
 }

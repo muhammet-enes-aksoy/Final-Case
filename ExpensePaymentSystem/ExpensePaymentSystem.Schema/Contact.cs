@@ -16,10 +16,7 @@ public class ContactRequest : BaseRequest
 
 public class ContactResponse : BaseResponse
 {
-    public int Id { get; set; }
-    public int UserId { get; set; }
     public string UserName { get; set; }
     public string ContactType { get; set; }
     public string Information { get; set; }
-    public bool IsDefault { get; set; }
 }

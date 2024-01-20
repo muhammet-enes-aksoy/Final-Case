@@ -1,4 +1,5 @@
 using ExpensePaymentSystem.Base.Schema;
+using ExpensePaymentSystem.Data.Entity;
 
 namespace ExpensePaymentSystem.Schema;
 

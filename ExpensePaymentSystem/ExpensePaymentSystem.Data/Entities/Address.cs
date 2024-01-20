@@ -11,7 +11,6 @@ public class Address : BaseEntityWithId
 {
     public int UserId { get; set; }
     public virtual User User { get; set; }
-
     public string Address1 { get; set; }
     public string Address2 { get; set; }
     public string Country { get; set; }

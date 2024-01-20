@@ -1,4 +1,5 @@
 using AutoMapper;
+using ExpensePaymentSystem.Business.Cqrs;
 using ExpensePaymentSystem.Data.Entity;
 using ExpensePaymentSystem.Schema;
 
@@ -28,12 +29,21 @@ public class MapperConfig : Profile
                 src => src.MapFrom(x => x.User.FirstName + " " + x.User.LastName));
 
         CreateMap<ExpenseClaimRequest, ExpenseClaim>();
-        CreateMap<ExpenseClaim, ExpenseClaimResponse>();
+        CreateMap<ExpenseClaim, ExpenseClaimResponse>()
+            .ForMember(dest => dest.Category, 
+                opt => opt.MapFrom(src => src.Category.CategoryType.ToString()))
+            .ForMember(dest => dest.PaymentMethod, 
+                opt => opt.MapFrom(src => src.PaymentMethod.PaymentMethodType.ToString()))
+            .ForMember(dest => dest.UserName,
+                src => src.MapFrom(x => x.User.FirstName + " " + x.User.LastName));
 
         CreateMap<PaymentMethodRequest, PaymentMethod>();
         CreateMap<PaymentMethod, PaymentMethodResponse>();
 
         CreateMap<UserRequest, User>();
         CreateMap<User, UserResponse>();
+
+
+
     }
 }

@@ -24,6 +24,12 @@ namespace ExpensePaymentSystem.Data.Migrations
 
             modelBuilder.Entity("ExpensePaymentSystem.Data.Entity.Account", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<int>("AccountNumber")
                         .HasColumnType("int");
 
@@ -68,7 +74,7 @@ namespace ExpensePaymentSystem.Data.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("AccountNumber");
+                    b.HasKey("Id");
 
                     b.HasIndex("AccountNumber")
                         .IsUnique();
@@ -398,15 +404,9 @@ namespace ExpensePaymentSystem.Data.Migrations
                     b.Property<int?>("UpdateUserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserNumber")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("IdentityNumber")
-                        .IsUnique();
-
-                    b.HasIndex("UserNumber")
                         .IsUnique();
 
                     b.ToTable("User", "dbo");
@@ -416,9 +416,7 @@ namespace ExpensePaymentSystem.Data.Migrations
                 {
                     b.HasOne("ExpensePaymentSystem.Data.Entity.User", "User")
                         .WithMany("Accounts")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
@@ -427,9 +425,7 @@ namespace ExpensePaymentSystem.Data.Migrations
                 {
                     b.HasOne("ExpensePaymentSystem.Data.Entity.User", "User")
                         .WithMany("Addresses")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
@@ -438,9 +434,7 @@ namespace ExpensePaymentSystem.Data.Migrations
                 {
                     b.HasOne("ExpensePaymentSystem.Data.Entity.User", "User")
                         .WithMany("Contacts")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
@@ -461,9 +455,7 @@ namespace ExpensePaymentSystem.Data.Migrations
 
                     b.HasOne("ExpensePaymentSystem.Data.Entity.User", "User")
                         .WithMany("ExpenseClaims")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Category");
 

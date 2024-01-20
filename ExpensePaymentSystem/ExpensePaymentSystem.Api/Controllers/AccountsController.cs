@@ -17,6 +17,7 @@ public class AccountsController : ControllerBase
     }
 
     [HttpGet]
+    []
     public async Task<ApiResponse<List<AccountResponse>>> Get()
     {
         var operation = new GetAllAccountsQuery();

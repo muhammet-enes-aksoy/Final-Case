@@ -13,7 +13,6 @@ public class User : BaseEntityWithId
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string Role { get; set; }
-    public int UserNumber { get; set; }
     public virtual List<Contact> Contacts { get; set; }
     public virtual List<Account> Accounts { get; set; }
     public virtual List<Address> Addresses { get; set; }
@@ -36,26 +35,25 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(x => x.Role).IsRequired(true).HasMaxLength(30);
 
         builder.HasIndex(x => x.IdentityNumber).IsUnique(true);
-         builder.HasIndex(x => x.UserNumber).IsUnique(true);
         
         builder.HasMany(x => x.Accounts)
             .WithOne(x => x.User)
             .HasForeignKey(x => x.UserId)
-            .IsRequired(true);
+            .IsRequired(false);
 
         builder.HasMany(x => x.Contacts)
             .WithOne(x => x.User)
             .HasForeignKey(x => x.UserId)
-            .IsRequired(true);
+            .IsRequired(false);
         
         builder.HasMany(x => x.Addresses)
             .WithOne(x => x.User)
             .HasForeignKey(x => x.UserId)
-            .IsRequired(true);
+            .IsRequired(false);
 
         builder.HasMany(x => x.ExpenseClaims)
             .WithOne(x => x.User)
             .HasForeignKey(x => x.UserId)
-            .IsRequired(true);
+            .IsRequired(false);
     }
 }

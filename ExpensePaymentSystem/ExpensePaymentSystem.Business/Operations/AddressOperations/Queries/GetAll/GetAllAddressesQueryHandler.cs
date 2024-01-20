@@ -1,5 +1,6 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using MediatR;
 using ExpensePaymentSystem.Data;
 using ExpensePaymentSystem.Base.Response;
 using ExpensePaymentSystem.Schema;
@@ -7,7 +8,7 @@ using ExpensePaymentSystem.Data.Entity;
 using ExpensePaymentSystem.Business.Cqrs;
 
 namespace ExpensePaymentSystem.Business.Operations.AddressOperations.Queries.GetAll;
-public class GetAllAddressesQueryHandler
+public class GetAllAddressesQueryHandler : IRequestHandler<GetAllAddressesQuery, ApiResponse<List<AddressResponse>>>
 {
     private readonly ExpensePaymentSystemDbContext dbContext;
     private readonly IMapper mapper;
@@ -22,6 +23,9 @@ public class GetAllAddressesQueryHandler
         CancellationToken cancellationToken)
     {
         var list = await dbContext.Set<Address>()
+            .Where(x => x.IsActive)
+            .Include(x => x.User)
+            .AsNoTracking()
             .Include(x => x.User).ToListAsync(cancellationToken);
 
         var mappedList = mapper.Map<List<Address>, List<AddressResponse>>(list);

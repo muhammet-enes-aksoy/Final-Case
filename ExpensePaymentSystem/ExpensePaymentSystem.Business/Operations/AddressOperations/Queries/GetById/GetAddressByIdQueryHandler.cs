@@ -24,6 +24,7 @@ public class GetAddressByIdQueryHandler : IRequestHandler<GetAddressByIdQuery, A
         CancellationToken cancellationToken)
     {
         var entity = await dbContext.Set<Address>()
+            .Where(x => x.IsActive)
             .Include(x => x.User)
             .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
 

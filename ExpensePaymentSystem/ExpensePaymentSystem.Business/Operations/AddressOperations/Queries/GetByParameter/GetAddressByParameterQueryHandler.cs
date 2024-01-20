@@ -26,15 +26,14 @@ public class GetAddressByParameterQueryHandler :
                CancellationToken cancellationToken)
     {
         var list = await dbContext.Set<Address>()
+            .Where(x => x.IsActive)
+            .Include(x => x.User)
             .AsNoTracking() // since the data is fetched for read only purposes
                             // as no tracking is used to improve performance
             .Where(x =>
                        (request.County == null || x.County.ToUpper().Contains(request.County.ToUpper())) &&
                        (request.PostalCode == null || x.PostalCode.ToUpper().Contains(request.PostalCode.ToUpper())) &&
                        (request.UserId == 0 || x.UserId.Equals(request.UserId)))
-            // since customerId is value type; in case of an empty value, it will be equal to 0
-            // if auto increment is used, it will never be 0 for new records
-            // otherwise, there must be a constraint applied
             .ToListAsync(cancellationToken);
 
         var mappedList = mapper.Map<List<Address>, List<AddressResponse>>(list);

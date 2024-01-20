@@ -1,7 +1,7 @@
 namespace ExpensePaymentSystem.Business.Constants;
 public class AccountMessages
 {
-    public const string CustomerNotExists = "Customer does not exist with the given customerId";
+    public const string EmployeeNotExists = "Employee does not exist with the given EmployeeId";
     public const string RecordNotExists = "Record not found";
 
     public const string BalanceGreaterThanZero = "Balance must be greater than 0.";

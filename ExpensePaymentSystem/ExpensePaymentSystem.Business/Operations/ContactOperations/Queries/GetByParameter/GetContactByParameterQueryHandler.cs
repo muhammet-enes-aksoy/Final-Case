@@ -26,12 +26,12 @@ public class GetContactByParameterQueryHandler : IRequestHandler<GetContactsByPa
     {
         var predicate = PredicateBuilder.New<Contact>(true);
         predicate.And(
-            c => (request.UserId.Equals(0) || c.UserId.Equals(request.UserId)) &&
+            c => (request.EmployeeId.Equals(0) || c.EmployeeId.Equals(request.EmployeeId)) &&
                  (request.ContactType == null || c.ContactType.ToUpper().Contains(request.ContactType.ToUpper())) &&
                  (request.Information == null || c.Information.ToUpper().Contains(request.Information.ToUpper())));
 
         var list = await context.Set<Contact>()
-            .Include(x => x.User)  
+            .Include(x => x.Employee)  
             .Where(u => u.IsActive)
             .Where(predicate).ToListAsync(cancellationToken);
 

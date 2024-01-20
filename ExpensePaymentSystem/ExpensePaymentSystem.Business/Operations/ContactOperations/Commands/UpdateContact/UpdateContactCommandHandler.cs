@@ -27,11 +27,11 @@ public class UpdateContactCommandHandler : IRequestHandler<UpdateContactCommand,
         if (fromdb == null)
             return new ApiResponse(ContactMessages.RecordNotExists);
 
-        var hasDefaultContact = await dbContext.Set<Contact>().AnyAsync(c => c.IsDefault && c.UserId == request.Id, cancellationToken);
+        var hasDefaultContact = await dbContext.Set<Contact>().AnyAsync(c => c.IsDefault && c.EmployeeId == request.Id, cancellationToken);
         // true; if the customer already has a default contact
 
         if (hasDefaultContact && request.Model.IsDefault)
-            return new ApiResponse(string.Format(ContactMessages.DefaultContactAlreadyExistsForUserId, request.Id));
+            return new ApiResponse(string.Format(ContactMessages.DefaultContactAlreadyExistsForEmployeeId, request.Id));
         // if the customer already has a default contact and the request model is default,
         // just returns a message
 

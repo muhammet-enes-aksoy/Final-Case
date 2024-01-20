@@ -23,7 +23,7 @@ public class GetContactByIdQueryHandler : IRequestHandler<GetContactByIdQuery, A
     public async Task<ApiResponse<ContactResponse>> Handle(GetContactByIdQuery request, CancellationToken cancellationToken)
     {
         var contact = await _context.Contacts
-            .Include(x => x.User)
+            .Include(x => x.Employee)
             .Where(u => u.IsActive)
             .AsNoTracking()
             .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);

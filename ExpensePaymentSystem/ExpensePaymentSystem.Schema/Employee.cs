@@ -1,12 +1,11 @@
 using System.Text.Json.Serialization;
 using ExpensePaymentSystem.Base.Schema;
-using ExpensePaymentSystem.Data.Entity;
 
 namespace ExpensePaymentSystem.Schema;
-public class UserRequest : BaseRequest
+public class EmployeeRequest : BaseRequest
 {
     [JsonIgnore]
-    public int UserNumber { get; set; }
+    public int EmployeeNumber { get; set; }
     public string IdentityNumber { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
@@ -16,13 +15,13 @@ public class UserRequest : BaseRequest
     public virtual List<AccountRequest> Accounts { get; set; }
     public virtual List<ExpenseClaimRequest> ExpenseClaims { get; set; }
 }
-public class UserResponse : BaseResponse
+public class EmployeeResponse : BaseResponse
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string Role { get; set; }
     public DateTime LastActivityDate { get; set; }
-    public string UserName
+    public string EmployeeName
     {
         get { return FirstName + " " + LastName; }
     }

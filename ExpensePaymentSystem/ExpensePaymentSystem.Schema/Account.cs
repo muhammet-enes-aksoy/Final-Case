@@ -10,7 +10,7 @@ public class AccountRequest : BaseRequest
     public int Id { get; set; }
     [JsonIgnore]
     public int AccountNumber { get; set; }
-    public int UserId { get; set; }
+    public int EmployeeId { get; set; }
     public string IBAN { get; set; }
     public decimal Balance { get; set; }
     public string CurrencyType { get; set; }
@@ -20,7 +20,7 @@ public class AccountRequest : BaseRequest
 
 public class AccountResponse : BaseResponse
 {
-    public string UserName { get; set; }
+    public string EmployeeName { get; set; }
     public int AccountNumber { get; set; }
     public string IBAN { get; set; }
     public decimal Balance { get; set; }

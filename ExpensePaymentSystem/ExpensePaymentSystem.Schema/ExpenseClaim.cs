@@ -7,7 +7,7 @@ public class ExpenseClaimRequest : BaseRequest
 {
     [JsonIgnore]
     public int Id { get; set; }
-    public int UserId { get; set; }
+    public int EmployeeId { get; set; }
     public int CategoryId { get; set; }
     public int PaymentMethodId { get; set; }
     public string PaymentLocation { get; set; }
@@ -22,7 +22,7 @@ public class ExpenseClaimRequest : BaseRequest
 }
 public class ExpenseClaimResponse : BaseResponse
 {
-    public string UserName { get; set; }
+    public string EmployeeName { get; set; }
     public string Category { get; set; }
     public string PaymentMethod { get; set; }
     public double Amount { get; set; }

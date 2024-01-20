@@ -16,7 +16,8 @@ public class ExpensePaymentSystemDbContext : DbContext
     public DbSet<Contact> Contacts { get; set; }
     public DbSet<ExpenseClaim> ExpenseClaims { get; set; }
     public DbSet<PaymentMethod> PaymentMethods { get; set; }
-    public DbSet<User> Users { get; set; }
+    public DbSet<Employee> Employees { get; set; }
+    public DbSet<SystemUser> SystemUser { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -27,7 +28,8 @@ public class ExpensePaymentSystemDbContext : DbContext
         modelBuilder.ApplyConfiguration(new ContactConfiguration());
         modelBuilder.ApplyConfiguration(new ExpenseClaimConfiguration());
         modelBuilder.ApplyConfiguration(new PaymentMethodConfiguration());
-        modelBuilder.ApplyConfiguration(new UserConfiguration());
+        modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
+        modelBuilder.ApplyConfiguration(new SystemUserConfiguration());
         base.OnModelCreating(modelBuilder);
     }
     

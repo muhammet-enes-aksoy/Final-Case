@@ -34,6 +34,28 @@ namespace ExpensePaymentSystem.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Employee",
+                schema: "dbo",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdentityNumber = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Role = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    InsertUserId = table.Column<int>(type: "int", nullable: false),
+                    InsertDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateUserId = table.Column<int>(type: "int", nullable: true),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Employee", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "PaymentMethod",
                 schema: "dbo",
                 columns: table => new
@@ -53,16 +75,21 @@ namespace ExpensePaymentSystem.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "User",
+                name: "SystemUser",
                 schema: "dbo",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IdentityNumber = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Role = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    LastActivityDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PasswordRetryCount = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    Status = table.Column<int>(type: "int", nullable: false, defaultValue: 1),
                     InsertUserId = table.Column<int>(type: "int", nullable: false),
                     InsertDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateUserId = table.Column<int>(type: "int", nullable: true),
@@ -71,7 +98,7 @@ namespace ExpensePaymentSystem.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_User", x => x.Id);
+                    table.PrimaryKey("PK_SystemUser", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -81,7 +108,7 @@ namespace ExpensePaymentSystem.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false),
+                    EmployeeId = table.Column<int>(type: "int", nullable: false),
                     AccountNumber = table.Column<int>(type: "int", nullable: false),
                     IBAN = table.Column<string>(type: "nvarchar(34)", maxLength: 34, nullable: false),
                     Balance = table.Column<decimal>(type: "decimal(18,4)", precision: 18, scale: 4, nullable: false),
@@ -98,10 +125,10 @@ namespace ExpensePaymentSystem.Data.Migrations
                 {
                     table.PrimaryKey("PK_Account", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Account_User_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Account_Employee_EmployeeId",
+                        column: x => x.EmployeeId,
                         principalSchema: "dbo",
-                        principalTable: "User",
+                        principalTable: "Employee",
                         principalColumn: "Id");
                 });
 
@@ -112,7 +139,7 @@ namespace ExpensePaymentSystem.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false),
+                    EmployeeId = table.Column<int>(type: "int", nullable: false),
                     Address1 = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
                     Address2 = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true),
                     Country = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
@@ -130,10 +157,10 @@ namespace ExpensePaymentSystem.Data.Migrations
                 {
                     table.PrimaryKey("PK_Address", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Address_User_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Address_Employee_EmployeeId",
+                        column: x => x.EmployeeId,
                         principalSchema: "dbo",
-                        principalTable: "User",
+                        principalTable: "Employee",
                         principalColumn: "Id");
                 });
 
@@ -144,7 +171,7 @@ namespace ExpensePaymentSystem.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false),
+                    EmployeeId = table.Column<int>(type: "int", nullable: false),
                     ContactType = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     Information = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     IsDefault = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
@@ -158,10 +185,10 @@ namespace ExpensePaymentSystem.Data.Migrations
                 {
                     table.PrimaryKey("PK_Contact", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Contact_User_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Contact_Employee_EmployeeId",
+                        column: x => x.EmployeeId,
                         principalSchema: "dbo",
-                        principalTable: "User",
+                        principalTable: "Employee",
                         principalColumn: "Id");
                 });
 
@@ -172,7 +199,7 @@ namespace ExpensePaymentSystem.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false),
+                    EmployeeId = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     PaymentMethodId = table.Column<int>(type: "int", nullable: false),
                     PaymentLocation = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
@@ -201,18 +228,18 @@ namespace ExpensePaymentSystem.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
+                        name: "FK_ExpenseClaim_Employee_EmployeeId",
+                        column: x => x.EmployeeId,
+                        principalSchema: "dbo",
+                        principalTable: "Employee",
+                        principalColumn: "Id");
+                    table.ForeignKey(
                         name: "FK_ExpenseClaim_PaymentMethod_PaymentMethodId",
                         column: x => x.PaymentMethodId,
                         principalSchema: "dbo",
                         principalTable: "PaymentMethod",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ExpenseClaim_User_UserId",
-                        column: x => x.UserId,
-                        principalSchema: "dbo",
-                        principalTable: "User",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -223,16 +250,22 @@ namespace ExpensePaymentSystem.Data.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Account_UserId",
+                name: "IX_Account_EmployeeId",
                 schema: "dbo",
                 table: "Account",
-                column: "UserId");
+                column: "EmployeeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Address_UserId",
+                name: "IX_Address_EmployeeId",
                 schema: "dbo",
                 table: "Address",
-                column: "UserId");
+                column: "EmployeeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Contact_EmployeeId",
+                schema: "dbo",
+                table: "Contact",
+                column: "EmployeeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Contact_Information_ContactType",
@@ -242,10 +275,11 @@ namespace ExpensePaymentSystem.Data.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Contact_UserId",
+                name: "IX_Employee_IdentityNumber",
                 schema: "dbo",
-                table: "Contact",
-                column: "UserId");
+                table: "Employee",
+                column: "IdentityNumber",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_ExpenseClaim_CategoryId",
@@ -254,22 +288,22 @@ namespace ExpensePaymentSystem.Data.Migrations
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ExpenseClaim_EmployeeId",
+                schema: "dbo",
+                table: "ExpenseClaim",
+                column: "EmployeeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ExpenseClaim_PaymentMethodId",
                 schema: "dbo",
                 table: "ExpenseClaim",
                 column: "PaymentMethodId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ExpenseClaim_UserId",
+                name: "IX_SystemUser_UserName",
                 schema: "dbo",
-                table: "ExpenseClaim",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_User_IdentityNumber",
-                schema: "dbo",
-                table: "User",
-                column: "IdentityNumber",
+                table: "SystemUser",
+                column: "UserName",
                 unique: true);
         }
 
@@ -293,15 +327,19 @@ namespace ExpensePaymentSystem.Data.Migrations
                 schema: "dbo");
 
             migrationBuilder.DropTable(
+                name: "SystemUser",
+                schema: "dbo");
+
+            migrationBuilder.DropTable(
                 name: "Category",
                 schema: "dbo");
 
             migrationBuilder.DropTable(
-                name: "PaymentMethod",
+                name: "Employee",
                 schema: "dbo");
 
             migrationBuilder.DropTable(
-                name: "User",
+                name: "PaymentMethod",
                 schema: "dbo");
         }
     }

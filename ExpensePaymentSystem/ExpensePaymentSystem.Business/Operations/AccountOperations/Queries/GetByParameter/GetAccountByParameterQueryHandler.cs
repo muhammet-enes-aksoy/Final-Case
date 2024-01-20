@@ -23,12 +23,12 @@ public class GetAccountsByParameterQueryHandler : IRequestHandler<GetAccountsByP
     {
         var predicate = PredicateBuilder.New<Account>(true);
       
-      predicate.And(acc => (request.CustomerId.Equals(0) || acc.UserId.Equals(request.CustomerId)) &&
+      predicate.And(acc => (request.EmployeeId.Equals(0) || acc.EmployeeId.Equals(request.EmployeeId)) &&
                            (request.IBAN == null || acc.IBAN.ToUpper().Contains(request.IBAN.ToUpper())));
 
         var list =  await dbContext.Set<Account>()
             .Where(x => x.IsActive)
-            .Include(x => x.User)
+            .Include(x => x.Employee)
             .Where(predicate).ToListAsync(cancellationToken);
         
         var mappedList = mapper.Map<List<Account>, List<AccountResponse>>(list);

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExpensePaymentSystem.Data.Migrations
 {
     [DbContext(typeof(ExpensePaymentSystemDbContext))]
-    [Migration("20240120185923_UniqueMigrationName")]
+    [Migration("20240120220429_UniqueMigrationName")]
     partial class UniqueMigrationName
     {
         /// <inheritdoc />
@@ -45,6 +45,9 @@ namespace ExpensePaymentSystem.Data.Migrations
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)");
 
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
                     b.Property<string>("IBAN")
                         .IsRequired()
                         .HasMaxLength(34)
@@ -74,15 +77,12 @@ namespace ExpensePaymentSystem.Data.Migrations
                     b.Property<int?>("UpdateUserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("AccountNumber")
                         .IsUnique();
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("EmployeeId");
 
                     b.ToTable("Account", "dbo");
                 });
@@ -118,6 +118,9 @@ namespace ExpensePaymentSystem.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("InsertDate")
                         .HasColumnType("datetime2");
 
@@ -144,12 +147,9 @@ namespace ExpensePaymentSystem.Data.Migrations
                     b.Property<int?>("UpdateUserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("EmployeeId");
 
                     b.ToTable("Address", "dbo");
                 });
@@ -202,6 +202,9 @@ namespace ExpensePaymentSystem.Data.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Information")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -229,17 +232,67 @@ namespace ExpensePaymentSystem.Data.Migrations
                     b.Property<int?>("UpdateUserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("EmployeeId");
 
                     b.HasIndex("Information", "ContactType")
                         .IsUnique();
 
                     b.ToTable("Contact", "dbo");
+                });
+
+            modelBuilder.Entity("ExpensePaymentSystem.Data.Entity.Employee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("IdentityNumber")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
+
+                    b.Property<DateTime>("InsertDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("InsertUserId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("UpdateUserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdentityNumber")
+                        .IsUnique();
+
+                    b.ToTable("Employee", "dbo");
                 });
 
             modelBuilder.Entity("ExpensePaymentSystem.Data.Entity.ExpenseClaim", b =>
@@ -262,6 +315,9 @@ namespace ExpensePaymentSystem.Data.Migrations
 
                     b.Property<DateTime>("ConfirmDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("InsertDate")
                         .HasColumnType("datetime2");
@@ -313,16 +369,13 @@ namespace ExpensePaymentSystem.Data.Migrations
                     b.Property<int?>("UpdateUserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("PaymentMethodId");
+                    b.HasIndex("EmployeeId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("PaymentMethodId");
 
                     b.ToTable("ExpenseClaim", "dbo");
                 });
@@ -362,7 +415,7 @@ namespace ExpensePaymentSystem.Data.Migrations
                     b.ToTable("PaymentMethod", "dbo");
                 });
 
-            modelBuilder.Entity("ExpensePaymentSystem.Data.Entity.User", b =>
+            modelBuilder.Entity("ExpensePaymentSystem.Data.Entity.SystemUser", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -370,15 +423,15 @@ namespace ExpensePaymentSystem.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("FirstName")
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("IdentityNumber")
+                    b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("nvarchar(11)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime>("InsertDate")
                         .HasColumnType("datetime2");
@@ -391,15 +444,33 @@ namespace ExpensePaymentSystem.Data.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(true);
 
+                    b.Property<DateTime>("LastActivityDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<int>("PasswordRetryCount")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+
                     b.Property<string>("Role")
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
+
+                    b.Property<int>("Status")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(1);
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
@@ -407,39 +478,44 @@ namespace ExpensePaymentSystem.Data.Migrations
                     b.Property<int?>("UpdateUserId")
                         .HasColumnType("int");
 
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("IdentityNumber")
+                    b.HasIndex("UserName")
                         .IsUnique();
 
-                    b.ToTable("User", "dbo");
+                    b.ToTable("SystemUser", "dbo");
                 });
 
             modelBuilder.Entity("ExpensePaymentSystem.Data.Entity.Account", b =>
                 {
-                    b.HasOne("ExpensePaymentSystem.Data.Entity.User", "User")
+                    b.HasOne("ExpensePaymentSystem.Data.Entity.Employee", "Employee")
                         .WithMany("Accounts")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("EmployeeId");
 
-                    b.Navigation("User");
+                    b.Navigation("Employee");
                 });
 
             modelBuilder.Entity("ExpensePaymentSystem.Data.Entity.Address", b =>
                 {
-                    b.HasOne("ExpensePaymentSystem.Data.Entity.User", "User")
+                    b.HasOne("ExpensePaymentSystem.Data.Entity.Employee", "Employee")
                         .WithMany("Addresses")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("EmployeeId");
 
-                    b.Navigation("User");
+                    b.Navigation("Employee");
                 });
 
             modelBuilder.Entity("ExpensePaymentSystem.Data.Entity.Contact", b =>
                 {
-                    b.HasOne("ExpensePaymentSystem.Data.Entity.User", "User")
+                    b.HasOne("ExpensePaymentSystem.Data.Entity.Employee", "Employee")
                         .WithMany("Contacts")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("EmployeeId");
 
-                    b.Navigation("User");
+                    b.Navigation("Employee");
                 });
 
             modelBuilder.Entity("ExpensePaymentSystem.Data.Entity.ExpenseClaim", b =>
@@ -450,24 +526,24 @@ namespace ExpensePaymentSystem.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ExpensePaymentSystem.Data.Entity.Employee", "Employee")
+                        .WithMany("ExpenseClaims")
+                        .HasForeignKey("EmployeeId");
+
                     b.HasOne("ExpensePaymentSystem.Data.Entity.PaymentMethod", "PaymentMethod")
                         .WithMany()
                         .HasForeignKey("PaymentMethodId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ExpensePaymentSystem.Data.Entity.User", "User")
-                        .WithMany("ExpenseClaims")
-                        .HasForeignKey("UserId");
-
                     b.Navigation("Category");
 
-                    b.Navigation("PaymentMethod");
+                    b.Navigation("Employee");
 
-                    b.Navigation("User");
+                    b.Navigation("PaymentMethod");
                 });
 
-            modelBuilder.Entity("ExpensePaymentSystem.Data.Entity.User", b =>
+            modelBuilder.Entity("ExpensePaymentSystem.Data.Entity.Employee", b =>
                 {
                     b.Navigation("Accounts");
 

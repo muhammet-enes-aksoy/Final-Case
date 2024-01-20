@@ -31,7 +31,8 @@ public class GetContactByParameterQueryHandler : IRequestHandler<GetContactsByPa
                  (request.Information == null || c.Information.ToUpper().Contains(request.Information.ToUpper())));
 
         var list = await context.Set<Contact>()
-            .Include(x => x.User)
+            .Include(x => x.User)  
+            .Where(u => u.IsActive)
             .Where(predicate).ToListAsync(cancellationToken);
 
         var mappedList = mapper.Map<List<Contact>, List<ContactResponse>>(list);

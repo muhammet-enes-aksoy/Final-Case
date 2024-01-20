@@ -23,6 +23,8 @@ public class GetAllContactsQueryHandler : IRequestHandler<GetAllContactsQuery, A
                CancellationToken cancellationToken)
     {
         var list = await dbContext.Set<Contact>()
+            .Include(x => x.User)
+            .Where(u => u.IsActive)
             .AsNoTracking()
             .ToListAsync(cancellationToken);
 

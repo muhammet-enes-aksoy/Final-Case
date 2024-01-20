@@ -25,7 +25,7 @@ public class CreateContactCommandHandler : IRequestHandler<CreateContactCommand,
     public async Task<ApiResponse<ContactResponse>> Handle(CreateContactCommand request, CancellationToken cancellationToken)
     {
         bool isValidToAdd = request.Model.IsDefault
-                    ? !(await dbContext.Set<Contact>().AnyAsync(x => x.UserId == request.Model.UserId && x.IsDefault))
+                    ? !await dbContext.Set<Contact>().AnyAsync(x => x.UserId == request.Model.UserId && x.IsDefault)
                     : true;
 
         if (!isValidToAdd)

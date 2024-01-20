@@ -12,21 +12,21 @@ public class MapperConfig : Profile
     {
         CreateMap<AccountRequest, Account>();
         CreateMap<Account, AccountResponse>()
-            .ForMember(dest => dest.UserName,
-                src => src.MapFrom(x => x.User.FirstName + " " + x.User.LastName));
+            .ForMember(dest => dest.EmployeeName,
+                src => src.MapFrom(x => x.Employee.FirstName + " " + x.Employee.LastName));
 
         CreateMap<AddressRequest, Address>();
         CreateMap<Address, AddressResponse>()
-            .ForMember(dest => dest.UserName,
-                src => src.MapFrom(x => x.User.FirstName + " " + x.User.LastName));
+            .ForMember(dest => dest.EmployeeName,
+                src => src.MapFrom(x => x.Employee.FirstName + " " + x.Employee.LastName));
 
         CreateMap<CategoryRequest, Category>();
         CreateMap<Category, CategoryResponse>();
 
         CreateMap<ContactRequest, Contact>();
         CreateMap<Contact, ContactResponse>()
-            .ForMember(dest => dest.UserName,
-                src => src.MapFrom(x => x.User.FirstName + " " + x.User.LastName));
+            .ForMember(dest => dest.EmployeeName,
+                src => src.MapFrom(x => x.Employee.FirstName + " " + x.Employee.LastName));
 
         CreateMap<ExpenseClaimRequest, ExpenseClaim>();
         CreateMap<ExpenseClaim, ExpenseClaimResponse>()
@@ -34,16 +34,17 @@ public class MapperConfig : Profile
                 opt => opt.MapFrom(src => src.Category.CategoryType.ToString()))
             .ForMember(dest => dest.PaymentMethod, 
                 opt => opt.MapFrom(src => src.PaymentMethod.PaymentMethodType.ToString()))
-            .ForMember(dest => dest.UserName,
-                src => src.MapFrom(x => x.User.FirstName + " " + x.User.LastName));
+            .ForMember(dest => dest.EmployeeName,
+                src => src.MapFrom(x => x.Employee.FirstName + " " + x.Employee.LastName));
 
         CreateMap<PaymentMethodRequest, PaymentMethod>();
         CreateMap<PaymentMethod, PaymentMethodResponse>();
 
-        CreateMap<UserRequest, User>();
-        CreateMap<User, UserResponse>();
+        CreateMap<EmployeeRequest, Employee>();
+        CreateMap<Employee, EmployeeResponse>();
 
-
+        CreateMap<SystemUserRequest, SystemUser>();
+        CreateMap<SystemUser, SystemUserResponse>();
 
     }
 }

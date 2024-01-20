@@ -28,10 +28,12 @@ public class GetCategoryByParameterQueryHandler : IRequestHandler<GetCategoriesB
         predicate.And(c => request.CategoryType == null || c.CategoryType.ToUpper().Contains(request.CategoryType.ToUpper()));
 
         var list = await context.Set<Category>()
+            .Where(x => x.IsActive)
             .Where(predicate).ToListAsync(cancellationToken);
 
         var mappedList = mapper.Map<List<Category>, List<CategoryResponse>>(list);
         return new ApiResponse<List<CategoryResponse>>(mappedList);
 
     }
+
 }

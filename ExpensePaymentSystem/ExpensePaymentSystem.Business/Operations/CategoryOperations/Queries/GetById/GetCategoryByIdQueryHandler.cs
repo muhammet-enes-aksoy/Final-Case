@@ -23,6 +23,7 @@ public class GetCategoryByIdQueryHandler : IRequestHandler<GetCategoryByIdQuery,
     public async Task<ApiResponse<CategoryResponse>> Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken)
     {
         var category = await _context.Categorys
+            .Where(x => x.IsActive)
             .AsNoTracking()
             .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
 

@@ -1,4 +1,4 @@
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using ExpensePaymentSystem.Base.Response;
 using ExpensePaymentSystem.Business.Cqrs;
@@ -23,7 +23,13 @@ public class GetAllUserCommandHandler : IRequestHandler<GetAllUserQuery, ApiResp
     public async Task<ApiResponse<List<UserResponse>>> Handle(GetAllUserQuery request,
         CancellationToken cancellationToken)
     {
-        var list = await dbContext.Set<User>().ToListAsync(cancellationToken);
+        var list = await dbContext.Set<User>()
+        .Include(x => x.Accounts)
+        .Include(x => x.Addresses)
+        .Include(x => x.Contacts)
+        .Include(x => x.ExpenseClaims)
+        .Where(u => u.IsActive)
+        .ToListAsync(cancellationToken);
         
         var mappedList = mapper.Map<List<User>, List<UserResponse>>(list);
          return new ApiResponse<List<UserResponse>>(mappedList);

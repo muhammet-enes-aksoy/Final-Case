@@ -1,4 +1,4 @@
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using ExpensePaymentSystem.Base.Response;
 using ExpensePaymentSystem.Business.Constants;
@@ -26,6 +26,11 @@ public class GetUserByIdCommandHandler : IRequestHandler<GetUserByIdQuery, ApiRe
         CancellationToken cancellationToken)
     {
         var entity =  await dbContext.Set<User>()
+            .Include(x => x.Accounts)
+            .Include(x => x.Addresses)
+            .Include(x => x.Contacts)
+            .Include(x => x.ExpenseClaims)   
+            .Where(u => u.IsActive)
             .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
 
         if (entity == null)

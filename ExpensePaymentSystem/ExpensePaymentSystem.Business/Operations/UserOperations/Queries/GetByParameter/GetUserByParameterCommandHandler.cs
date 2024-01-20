@@ -1,4 +1,4 @@
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using ExpensePaymentSystem.Base.Response;
 using ExpensePaymentSystem.Business.Cqrs;
@@ -31,6 +31,11 @@ public class GetUserByParameterCommandHandler : IRequestHandler<GetUserByParamet
         
         
         var list =  await dbContext.Set<User>()
+            .Include(x => x.Accounts)
+            .Include(x => x.Addresses)
+            .Include(x => x.Contacts)
+            .Include(x => x.ExpenseClaims)   
+            .Where(u => u.IsActive)
             .Where(predicate).ToListAsync(cancellationToken);
         
         var mappedList = mapper.Map<List<User>, List<UserResponse>>(list);

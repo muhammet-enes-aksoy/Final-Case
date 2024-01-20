@@ -7,6 +7,6 @@ public record CreatePaymentMethodCommand(PaymentMethodRequest Model) : IRequest<
 public record UpdatePaymentMethodCommand(int Id, PaymentMethodRequest Model) : IRequest<ApiResponse>;
 public record DeletePaymentMethodCommand(int Id) : IRequest<ApiResponse>;
 
-public record GetAllPaymentMethodQuery() : IRequest<ApiResponse<List<PaymentMethodResponse>>>;
+public record GetAllPaymentMethodsQuery() : IRequest<ApiResponse<List<PaymentMethodResponse>>>;
 public record GetPaymentMethodByIdQuery(int Id) : IRequest<ApiResponse<PaymentMethodResponse>>;
-public record GetPaymentMethodByParameterQuery(string FirstName,string LastName,string PaymentMethodName) : IRequest<ApiResponse<List<PaymentMethodResponse>>>;
+public record GetPaymentMethodsByParameterQuery(string PaymentMethodType) : IRequest<ApiResponse<List<PaymentMethodResponse>>>;

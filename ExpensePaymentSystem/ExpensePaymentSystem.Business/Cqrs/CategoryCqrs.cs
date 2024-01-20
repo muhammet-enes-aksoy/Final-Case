@@ -7,6 +7,6 @@ public record CreateCategoryCommand(CategoryRequest Model) : IRequest<ApiRespons
 public record UpdateCategoryCommand(int Id, CategoryRequest Model) : IRequest<ApiResponse>;
 public record DeleteCategoryCommand(int Id) : IRequest<ApiResponse>;
 
-public record GetAllCategoryQuery() : IRequest<ApiResponse<List<CategoryResponse>>>;
+public record GetAllCategoriesQuery() : IRequest<ApiResponse<List<CategoryResponse>>>;
 public record GetCategoryByIdQuery(int Id) : IRequest<ApiResponse<CategoryResponse>>;
-public record GetCategoryByParameterQuery(string FirstName,string LastName,string CategoryName) : IRequest<ApiResponse<List<CategoryResponse>>>;
+public record GetCategoriesByParameterQuery(string CategoryType) : IRequest<ApiResponse<List<CategoryResponse>>>;

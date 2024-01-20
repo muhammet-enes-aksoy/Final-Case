@@ -8,6 +8,11 @@ using ExpensePaymentSystem.Business.Mapper;
 using Microsoft.OpenApi.Models;
 using ExpensePaymentSystem.Business;
 using MediatR;
+using ExpensePaymentSystem.Api.Middleware;
+using ExpensePaymentSystem.Base.Token;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
 
 namespace ExpensePaymentSystem.Api;
 
@@ -39,9 +44,55 @@ public class Startup
         services.AddSingleton(mapperConfig.CreateMapper());
 
         services.AddEndpointsApiExplorer();
+        services.AddSwaggerGen();
         services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "ExpensePaymentSystem", Version = "v1" });
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "Vb Api Management", Version = "v1.0" });
+
+            var securityScheme = new OpenApiSecurityScheme
+            {
+                Name = "Vb Management for IT Company",
+                Description = "Enter JWT Bearer token **_only_**",
+                In = ParameterLocation.Header,
+                Type = SecuritySchemeType.Http,
+                Scheme = "bearer",
+                BearerFormat = "JWT",
+                Reference = new OpenApiReference
+                {
+                    Id = JwtBearerDefaults.AuthenticationScheme,
+                    Type = ReferenceType.SecurityScheme
+                }
+            };
+            c.AddSecurityDefinition(securityScheme.Reference.Id, securityScheme);
+            c.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                { securityScheme, new string[] { } }
+            });
+        });
+
+
+        JwtConfig jwtConfig = Configuration.GetSection("JwtConfig").Get<JwtConfig>();
+        services.Configure<JwtConfig>(Configuration.GetSection("JwtConfig"));
+        
+        services.AddAuthentication(x =>
+        {
+            x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        }).AddJwtBearer(x =>
+        {
+            x.RequireHttpsMetadata = true;
+            x.SaveToken = true;
+            x.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidIssuer = jwtConfig.Issuer,
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtConfig.Secret)),
+                ValidAudience = jwtConfig.Audience,
+                ValidateAudience = false,
+                ValidateLifetime = true,
+                ClockSkew = TimeSpan.FromMinutes(2)
+            };
         });
     }
 
@@ -56,8 +107,11 @@ public class Startup
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ExpensePaymentSystem v1");
             });
         }
-
+        app.UseMiddleware<HeartBeatMiddleware>(); 
+        app.UseMiddleware<ErrorHandlerMiddleware>(); 
+        
         app.UseHttpsRedirection();
+        app.UseAuthentication();
         app.UseRouting();
         app.UseAuthorization();
         app.UseEndpoints(x => { x.MapControllers(); });

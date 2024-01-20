@@ -22,6 +22,7 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
         builder.Property(x => x.UpdateDate).IsRequired(false);
         builder.Property(x => x.UpdateUserId).IsRequired(false);
         builder.Property(x => x.IsActive).IsRequired(true).HasDefaultValue(true);   
+       
         builder.Property(x => x.CategoryType).IsRequired(true).HasMaxLength(50);
     }
 }

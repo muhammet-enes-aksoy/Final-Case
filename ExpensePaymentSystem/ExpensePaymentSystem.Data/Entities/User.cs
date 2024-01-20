@@ -12,9 +12,8 @@ public class User : BaseEntityWithId
     public string IdentityNumber { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public int UserNumber { get; set; }
     public string Role { get; set; }
-    
+    public int UserNumber { get; set; }
     public virtual List<Contact> Contacts { get; set; }
     public virtual List<Account> Accounts { get; set; }
     public virtual List<Address> Addresses { get; set; }
@@ -31,11 +30,32 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(x => x.UpdateUserId).IsRequired(false);
         builder.Property(x => x.IsActive).IsRequired(true).HasDefaultValue(true);
     
+        builder.Property(x => x.IdentityNumber).IsRequired(true).HasMaxLength(11);
         builder.Property(x => x.FirstName).IsRequired(true).HasMaxLength(50);
         builder.Property(x => x.LastName).IsRequired(true).HasMaxLength(50);
         builder.Property(x => x.Role).IsRequired(true).HasMaxLength(30);
 
-        //builder.HasIndex(x => x.UserName).IsUnique(true);
+        builder.HasIndex(x => x.IdentityNumber).IsUnique(true);
+         builder.HasIndex(x => x.UserNumber).IsUnique(true);
+        
+        builder.HasMany(x => x.Accounts)
+            .WithOne(x => x.User)
+            .HasForeignKey(x => x.UserId)
+            .IsRequired(true);
 
+        builder.HasMany(x => x.Contacts)
+            .WithOne(x => x.User)
+            .HasForeignKey(x => x.UserId)
+            .IsRequired(true);
+        
+        builder.HasMany(x => x.Addresses)
+            .WithOne(x => x.User)
+            .HasForeignKey(x => x.UserId)
+            .IsRequired(true);
+
+        builder.HasMany(x => x.ExpenseClaims)
+            .WithOne(x => x.User)
+            .HasForeignKey(x => x.UserId)
+            .IsRequired(true);
     }
 }

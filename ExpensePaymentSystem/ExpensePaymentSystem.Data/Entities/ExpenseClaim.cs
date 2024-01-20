@@ -20,11 +20,11 @@ public class ExpenseClaim : BaseEntityWithId
     public string Status { get; set; }
     public string StatusDescription { get; set; }
     public bool IsProcessed { get; set; }
-    public double Amount { get; set; }
+    public decimal Amount { get; set; }
+    public bool IsDefault { get; set; }
     public DateTime ClaimDate { get; set; }
     public DateTime ConfirmDate { get; set; }
-    public bool IsDefault { get; set; }
-    
+   
 }
 
 public class ExpenseClaimConfiguration : IEntityTypeConfiguration<ExpenseClaim>
@@ -37,8 +37,22 @@ public class ExpenseClaimConfiguration : IEntityTypeConfiguration<ExpenseClaim>
         builder.Property(x => x.UpdateUserId).IsRequired(false);
         builder.Property(x => x.IsActive).IsRequired(true).HasDefaultValue(true);
     
-        builder.Property(x => x.CategoryId).IsRequired(true).HasMaxLength(50);
-        builder.Property(x => x.UserId).IsRequired(true).HasMaxLength(50);
-        builder.Property(x => x.PaymentMethodId).IsRequired(true).HasMaxLength(30);
+        builder.Property(x => x.UserId).IsRequired(true);
+        builder.Property(x => x.CategoryId).IsRequired(true);
+        builder.Property(x => x.PaymentMethodId).IsRequired(true);
+        builder.Property(x => x.PaymentLocation).IsRequired(true).HasMaxLength(50);
+        builder.Property(x => x.ReceiptNumber).IsRequired(true).HasMaxLength(50);
+        builder.Property(x => x.Status).IsRequired(true).HasMaxLength(50);
+        builder.Property(x => x.StatusDescription).IsRequired(true).HasMaxLength(50);
+        builder.Property(x => x.IsProcessed).IsRequired(true).HasDefaultValue(false);
+        builder.Property(x => x.Amount).IsRequired(true).HasPrecision(18, 4);
+        builder.Property(x => x.IsDefault).IsRequired(true).HasDefaultValue(false);
+        builder.Property(x => x.ClaimDate).IsRequired(true);
+        builder.Property(x => x.ConfirmDate).IsRequired(true);
+
+        builder.HasIndex(x => x.UserId);
+        builder.HasIndex(x => x.CategoryId);
+        builder.HasIndex(x => x.PaymentMethodId);
+    
     }
 }

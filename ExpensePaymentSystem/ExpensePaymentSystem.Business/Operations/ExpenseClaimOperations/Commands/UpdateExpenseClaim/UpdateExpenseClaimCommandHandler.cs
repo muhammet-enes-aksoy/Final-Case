@@ -27,11 +27,11 @@ public class UpdateExpenseClaimCommandHandler : IRequestHandler<UpdateExpenseCla
         if (fromdb == null)
             return new ApiResponse(ExpenseClaimMessages.RecordNotExists);
 
-        var hasDefaultExpenseClaim = await dbContext.Set<ExpenseClaim>().AnyAsync(c => c.IsDefault && c.UserId == request.Id, cancellationToken);
+        var hasDefaultExpenseClaim = await dbContext.Set<ExpenseClaim>().AnyAsync(c => c.IsDefault && c.EmployeeId == request.Id, cancellationToken);
         // true; if the customer already has a default ExpenseClaim
 
         if (hasDefaultExpenseClaim && request.Model.IsDefault)
-            return new ApiResponse(string.Format(ExpenseClaimMessages.DefaultExpenseClaimAlreadyExistsForUserId, request.Id));
+            return new ApiResponse(string.Format(ExpenseClaimMessages.DefaultExpenseClaimAlreadyExistsForEmployeeId, request.Id));
         // if the customer already has a default ExpenseClaim and the request model is default,
         // just returns a message
 

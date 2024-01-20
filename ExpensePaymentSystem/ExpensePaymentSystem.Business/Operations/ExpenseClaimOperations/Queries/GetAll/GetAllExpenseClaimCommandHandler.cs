@@ -23,7 +23,7 @@ public class GetAllExpenseClaimsQueryHandler : IRequestHandler<GetAllExpenseClai
                CancellationToken cancellationToken)
     {
         var list = await dbContext.Set<ExpenseClaim>()
-            .Include(x => x.User)
+            .Include(x => x.Employee)
             .Include(x => x.Category)
             .Include(x => x.PaymentMethod)
             .AsNoTracking()

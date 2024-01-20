@@ -25,11 +25,11 @@ public class CreateExpenseClaimCommandHandler : IRequestHandler<CreateExpenseCla
     public async Task<ApiResponse<ExpenseClaimResponse>> Handle(CreateExpenseClaimCommand request, CancellationToken cancellationToken)
     {
         bool isValidToAdd = request.Model.IsDefault
-                    ? !(await dbContext.Set<ExpenseClaim>().AnyAsync(x => x.UserId == request.Model.UserId && x.IsDefault))
+                    ? !(await dbContext.Set<ExpenseClaim>().AnyAsync(x => x.EmployeeId == request.Model.EmployeeId && x.IsDefault))
                     : true;
 
         if (!isValidToAdd)
-            return new ApiResponse<ExpenseClaimResponse>(string.Format(ExpenseClaimMessages.DefaultExpenseClaimAlreadyExistsForUserId, request.Model.UserId));
+            return new ApiResponse<ExpenseClaimResponse>(string.Format(ExpenseClaimMessages.DefaultExpenseClaimAlreadyExistsForEmployeeId, request.Model.EmployeeId));
 
         var ExpenseClaim = mapper.Map<ExpenseClaim>(request.Model);
 

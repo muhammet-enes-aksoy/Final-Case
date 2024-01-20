@@ -26,12 +26,12 @@ public class GetExpenseClaimByParameterQueryHandler : IRequestHandler<GetExpense
     {
         var predicate = PredicateBuilder.New<ExpenseClaim>(true);
         predicate.And(
-            c => (request.UserId.Equals(0) || c.UserId.Equals(request.UserId)) &&
+            c => (request.EmployeeId.Equals(0) || c.EmployeeId.Equals(request.EmployeeId)) &&
                  (request.ReceiptNumber == null || c.ReceiptNumber.ToUpper().Contains(request.ReceiptNumber.ToUpper())) &&
                  (request.Status == null || c.Status.ToUpper().Contains(request.Status.ToUpper())));
 
         var list = await context.Set<ExpenseClaim>()
-            .Include(x => x.User)
+            .Include(x => x.Employee)
             .Include(x => x.Category)
             .Include(x => x.PaymentMethod)
             .Where(predicate).ToListAsync(cancellationToken);

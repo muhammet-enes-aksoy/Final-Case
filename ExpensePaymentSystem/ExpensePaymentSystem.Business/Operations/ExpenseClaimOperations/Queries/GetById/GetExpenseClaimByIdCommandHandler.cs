@@ -23,7 +23,7 @@ public class GetExpenseClaimByIdQueryHandler : IRequestHandler<GetExpenseClaimBy
     public async Task<ApiResponse<ExpenseClaimResponse>> Handle(GetExpenseClaimByIdQuery request, CancellationToken cancellationToken)
     {
         var ExpenseClaim = await _context.ExpenseClaims
-            .Include(x => x.User)
+            .Include(x => x.Employee)
             .Include(x => x.Category)
             .Include(x => x.PaymentMethod)
             .AsNoTracking()

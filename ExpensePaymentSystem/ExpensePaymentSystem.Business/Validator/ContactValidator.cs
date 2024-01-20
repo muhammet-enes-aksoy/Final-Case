@@ -19,7 +19,7 @@ public class ContactValidator : AbstractValidator<ContactRequest>
             .MaximumLength(50)
             .WithMessage(ContactMessages.InformationMaxLength);
 
-        RuleFor(c => c.UserId).NotEmpty()
-            .WithMessage(ContactMessages.UserIdIsRequired);
+        RuleFor(c => c.EmployeeId).NotEmpty()
+            .WithMessage(ContactMessages.EmployeeIdIsRequired);
     }
 }

@@ -6,13 +6,13 @@ using FluentValidation;
 
 namespace ExpensePaymentSystem.Business.Validator;
 
-public class UserValidator : AbstractValidator<UserRequest>
+public class EmployeeValidator : AbstractValidator<EmployeeRequest>
 {
-    public UserValidator()
+    public EmployeeValidator()
     {
         RuleFor(x => x.FirstName).NotEmpty().MaximumLength(50);
         RuleFor(x => x.LastName).NotEmpty().MaximumLength(50);
-        RuleFor(x => x.IdentityNumber).NotEmpty().MaximumLength(11).WithName(UserMessages.IdentityNumberDisplayedName);
+        RuleFor(x => x.IdentityNumber).NotEmpty().MaximumLength(11).WithName(EmployeeMessages.IdentityNumberDisplayedName);
 
     }
 }

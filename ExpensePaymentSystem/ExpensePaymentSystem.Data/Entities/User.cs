@@ -9,8 +9,10 @@ namespace ExpensePaymentSystem.Data.Entity;
 [Table("User", Schema = "dbo")]
 public class User : BaseEntityWithId
 {
+    public string IdentityNumber { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
+    public int UserNumber { get; set; }
     public string Role { get; set; }
     
     public virtual List<Contact> Contacts { get; set; }

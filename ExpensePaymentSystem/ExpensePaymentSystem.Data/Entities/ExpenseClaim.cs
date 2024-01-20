@@ -23,6 +23,7 @@ public class ExpenseClaim : BaseEntityWithId
     public double Amount { get; set; }
     public DateTime ClaimDate { get; set; }
     public DateTime ConfirmDate { get; set; }
+    public bool IsDefault { get; set; }
     
 }
 

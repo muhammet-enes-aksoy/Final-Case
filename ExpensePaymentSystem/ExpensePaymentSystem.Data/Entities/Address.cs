@@ -9,8 +9,8 @@ namespace ExpensePaymentSystem.Data.Entity;
 [Table("Address", Schema = "dbo")]
 public class Address : BaseEntityWithId
 {
-    public int UserId { get; set; }
-    public virtual User User { get; set; }
+    public int EmployeeId { get; set; }
+    public virtual Employee Employee { get; set; }
     public string Address1 { get; set; }
     public string Address2 { get; set; }
     public string Country { get; set; }
@@ -29,7 +29,7 @@ public class AddressConfiguration : IEntityTypeConfiguration<Address>
         builder.Property(x => x.UpdateUserId).IsRequired(false);
         builder.Property(x => x.IsActive).IsRequired(true).HasDefaultValue(true);
         
-        builder.Property(x => x.UserId).IsRequired(true);
+        builder.Property(x => x.EmployeeId).IsRequired(true);
         builder.Property(x => x.Address1).IsRequired(true).HasMaxLength(150);
         builder.Property(x => x.Address2).IsRequired(false).HasMaxLength(150);
         builder.Property(x => x.Country).IsRequired(true).HasMaxLength(100);
@@ -38,6 +38,6 @@ public class AddressConfiguration : IEntityTypeConfiguration<Address>
         builder.Property(x => x.PostalCode).IsRequired(false).HasMaxLength(10);
         builder.Property(x => x.IsDefault).IsRequired(true).HasDefaultValue(false);
         
-        builder.HasIndex(x => x.UserId);
+        builder.HasIndex(x => x.EmployeeId);
     }
 }

@@ -9,8 +9,8 @@ namespace ExpensePaymentSystem.Data.Entity;
 [Table("ExpenseClaim", Schema = "dbo")]
 public class ExpenseClaim : BaseEntityWithId
 {
-    public int UserId { get; set; }
-    public virtual User User { get; set; }
+    public int EmployeeId { get; set; }
+    public virtual Employee Employee { get; set; }
     public int CategoryId { get; set; }
     public virtual Category Category { get; set; }
     public int PaymentMethodId { get; set; }
@@ -37,7 +37,7 @@ public class ExpenseClaimConfiguration : IEntityTypeConfiguration<ExpenseClaim>
         builder.Property(x => x.UpdateUserId).IsRequired(false);
         builder.Property(x => x.IsActive).IsRequired(true).HasDefaultValue(true);
     
-        builder.Property(x => x.UserId).IsRequired(true);
+        builder.Property(x => x.EmployeeId).IsRequired(true);
         builder.Property(x => x.CategoryId).IsRequired(true);
         builder.Property(x => x.PaymentMethodId).IsRequired(true);
         builder.Property(x => x.PaymentLocation).IsRequired(true).HasMaxLength(50);
@@ -50,7 +50,7 @@ public class ExpenseClaimConfiguration : IEntityTypeConfiguration<ExpenseClaim>
         builder.Property(x => x.ClaimDate).IsRequired(true);
         builder.Property(x => x.ConfirmDate).IsRequired(true);
 
-        builder.HasIndex(x => x.UserId);
+        builder.HasIndex(x => x.EmployeeId);
         builder.HasIndex(x => x.CategoryId);
         builder.HasIndex(x => x.PaymentMethodId);
     

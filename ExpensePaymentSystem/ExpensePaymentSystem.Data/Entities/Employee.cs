@@ -6,8 +6,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace ExpensePaymentSystem.Data.Entity;
 
-[Table("User", Schema = "dbo")]
-public class User : BaseEntityWithId
+[Table("Employee", Schema = "dbo")]
+public class Employee : BaseEntityWithId
 {
     public string IdentityNumber { get; set; }
     public string FirstName { get; set; }
@@ -19,9 +19,9 @@ public class User : BaseEntityWithId
     public virtual List<ExpenseClaim> ExpenseClaims { get; set; }
 }
 
-public class UserConfiguration : IEntityTypeConfiguration<User>
+public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
 {
-    public void Configure(EntityTypeBuilder<User> builder)
+    public void Configure(EntityTypeBuilder<Employee> builder)
     {
         builder.Property(x => x.InsertDate).IsRequired(true);
         builder.Property(x => x.InsertUserId).IsRequired(true);
@@ -37,23 +37,23 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.HasIndex(x => x.IdentityNumber).IsUnique(true);
         
         builder.HasMany(x => x.Accounts)
-            .WithOne(x => x.User)
-            .HasForeignKey(x => x.UserId)
+            .WithOne(x => x.Employee)
+            .HasForeignKey(x => x.EmployeeId)
             .IsRequired(false);
 
         builder.HasMany(x => x.Contacts)
-            .WithOne(x => x.User)
-            .HasForeignKey(x => x.UserId)
+            .WithOne(x => x.Employee)
+            .HasForeignKey(x => x.EmployeeId)
             .IsRequired(false);
         
         builder.HasMany(x => x.Addresses)
-            .WithOne(x => x.User)
-            .HasForeignKey(x => x.UserId)
+            .WithOne(x => x.Employee)
+            .HasForeignKey(x => x.EmployeeId)
             .IsRequired(false);
 
         builder.HasMany(x => x.ExpenseClaims)
-            .WithOne(x => x.User)
-            .HasForeignKey(x => x.UserId)
+            .WithOne(x => x.Employee)
+            .HasForeignKey(x => x.EmployeeId)
             .IsRequired(false);
     }
 }

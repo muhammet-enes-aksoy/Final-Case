@@ -21,7 +21,7 @@ public class SystemUsersController : ControllerBase
 
     
     [HttpGet("MyProfile")]
-    [Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin, onay")]
     public async Task<ApiResponse<SystemUserResponse>> MyProfile()
     {
         string id = (User.Identity as ClaimsIdentity).FindFirst("Id")?.Value;

@@ -1,4 +1,5 @@
 using AutoMapper;
+using ExpensePaymentSystem.Base.Encryption;
 using ExpensePaymentSystem.Base.Response;
 using ExpensePaymentSystem.Business.Cqrs;
 using ExpensePaymentSystem.Data;
@@ -35,7 +36,7 @@ public class SystemUserCommandHandler :
         }
         
         var entity = mapper.Map<SystemUserRequest, SystemUser>(request.Model);
-        
+        //string hash = Md5Extension.GetHash(request.Model.Password.Trim());
         var entityResult = await dbContext.AddAsync(entity, cancellationToken);
         await dbContext.SaveChangesAsync(cancellationToken);
 

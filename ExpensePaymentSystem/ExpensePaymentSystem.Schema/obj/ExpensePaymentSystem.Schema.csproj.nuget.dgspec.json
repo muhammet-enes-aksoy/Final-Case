@@ -79,14 +79,14 @@
         }
       }
     },
-    "C:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\ExpensePaymentSystem.Data.csproj": {
+    "c:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\ExpensePaymentSystem.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\ExpensePaymentSystem.Data.csproj",
+        "projectUniqueName": "c:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\ExpensePaymentSystem.Data.csproj",
         "projectName": "ExpensePaymentSystem.Data",
-        "projectPath": "C:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\ExpensePaymentSystem.Data.csproj",
+        "projectPath": "c:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\ExpensePaymentSystem.Data.csproj",
         "packagesPath": "C:\\Users\\Enes\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\obj\\",
+        "outputPath": "c:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Enes\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -187,8 +187,8 @@
               "C:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Base\\ExpensePaymentSystem.Base.csproj": {
                 "projectPath": "C:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Base\\ExpensePaymentSystem.Base.csproj"
               },
-              "C:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\ExpensePaymentSystem.Data.csproj": {
-                "projectPath": "C:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\ExpensePaymentSystem.Data.csproj"
+              "c:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\ExpensePaymentSystem.Data.csproj": {
+                "projectPath": "c:\\Users\\Enes\\Desktop\\.Net\\Final-Case\\ExpensePaymentSystem\\ExpensePaymentSystem.Data\\ExpensePaymentSystem.Data.csproj"
               }
             }
           }

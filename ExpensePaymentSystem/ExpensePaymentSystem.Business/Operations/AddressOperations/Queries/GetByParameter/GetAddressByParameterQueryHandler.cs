@@ -27,13 +27,13 @@ public class GetAddressByParameterQueryHandler :
     {
         var list = await dbContext.Set<Address>()
             .Where(x => x.IsActive)
-            .Include(x => x.User)
+            .Include(x => x.Employee)
             .AsNoTracking() // since the data is fetched for read only purposes
                             // as no tracking is used to improve performance
             .Where(x =>
                        (request.County == null || x.County.ToUpper().Contains(request.County.ToUpper())) &&
                        (request.PostalCode == null || x.PostalCode.ToUpper().Contains(request.PostalCode.ToUpper())) &&
-                       (request.UserId == 0 || x.UserId.Equals(request.UserId)))
+                       (request.EmployeeId == 0 || x.EmployeeId.Equals(request.EmployeeId)))
             .ToListAsync(cancellationToken);
 
         var mappedList = mapper.Map<List<Address>, List<AddressResponse>>(list);

@@ -24,9 +24,9 @@ public class GetAllAddressesQueryHandler : IRequestHandler<GetAllAddressesQuery,
     {
         var list = await dbContext.Set<Address>()
             .Where(x => x.IsActive)
-            .Include(x => x.User)
+            .Include(x => x.Employee)
             .AsNoTracking()
-            .Include(x => x.User).ToListAsync(cancellationToken);
+            .Include(x => x.Employee).ToListAsync(cancellationToken);
 
         var mappedList = mapper.Map<List<Address>, List<AddressResponse>>(list);
         return new ApiResponse<List<AddressResponse>>(mappedList);

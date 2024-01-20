@@ -25,11 +25,11 @@ public class CreateAddressCommandHandler : IRequestHandler<CreateAddressCommand,
     public async Task<ApiResponse<AddressResponse>> Handle(CreateAddressCommand request, CancellationToken cancellationToken)
     {
         bool isValidToAdd = request.Model.IsDefault
-                ? !(await dbContext.Set<Address>().AnyAsync(addr => addr.UserId == request.Model.UserId && addr.IsDefault))
+                ? !(await dbContext.Set<Address>().AnyAsync(addr => addr.EmployeeId == request.Model.EmployeeId && addr.IsDefault))
                 : true;
 
         if (!isValidToAdd)
-            return new ApiResponse<AddressResponse>(string.Format(AddressMessages.DefaultAddressAlreadyExistsForCustomerId, request.Model.Id));
+            return new ApiResponse<AddressResponse>(string.Format(AddressMessages.DefaultAddressAlreadyExistsForEmployeeId, request.Model.Id));
 
         var entity = mapper.Map<Address>(request.Model);
 

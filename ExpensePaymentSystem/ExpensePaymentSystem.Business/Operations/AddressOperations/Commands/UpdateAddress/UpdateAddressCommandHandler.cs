@@ -27,10 +27,10 @@ public class UpdateAddressCommandHandler : IRequestHandler<UpdateAddressCommand,
         if (fromdb == null)
             return new ApiResponse(AddressMessages.RecordNotExists);
 
-        var hasDefaultAddress = await dbContext.Set<Address>().AnyAsync(a => a.IsDefault && a.UserId.Equals(request.Id), cancellationToken);
+        var hasDefaultAddress = await dbContext.Set<Address>().AnyAsync(a => a.IsDefault && a.EmployeeId.Equals(request.Id), cancellationToken);
 
         if (hasDefaultAddress && request.Model.IsDefault)
-            return new ApiResponse(AddressMessages.CustomerAlreadyHasDefaultAddress);
+            return new ApiResponse(AddressMessages.EmployeeAlreadyHasDefaultAddress);
 
 
         if (!(hasDefaultAddress || request.Model.IsDefault))

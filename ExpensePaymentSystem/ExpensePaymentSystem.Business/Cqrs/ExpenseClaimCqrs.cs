@@ -9,4 +9,4 @@ public record DeleteExpenseClaimCommand(int Id) : IRequest<ApiResponse>;
 
 public record GetAllExpenseClaimsQuery() : IRequest<ApiResponse<List<ExpenseClaimResponse>>>;
 public record GetExpenseClaimByIdQuery(int Id) : IRequest<ApiResponse<ExpenseClaimResponse>>;
-public record GetExpenseClaimsByParameterQuery(int UserId, string ReceiptNumber, string Status) : IRequest<ApiResponse<List<ExpenseClaimResponse>>>;
+public record GetExpenseClaimsByParameterQuery(int EmployeeId, string ReceiptNumber, string Status) : IRequest<ApiResponse<List<ExpenseClaimResponse>>>;

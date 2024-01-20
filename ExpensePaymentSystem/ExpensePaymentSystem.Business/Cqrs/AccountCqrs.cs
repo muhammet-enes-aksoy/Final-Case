@@ -11,4 +11,4 @@ public record DeleteAccountCommand(int Id) : IRequest<ApiResponse>;
 
 public record GetAllAccountsQuery() : IRequest<ApiResponse<List<AccountResponse>>>;
 public record GetAccountByIdQuery(int Id) : IRequest<ApiResponse<AccountResponse>>;
-public record GetAccountsByParameterQuery(int CustomerId, string IBAN) : IRequest<ApiResponse<List<AccountResponse>>>;
+public record GetAccountsByParameterQuery(int EmployeeId, string IBAN) : IRequest<ApiResponse<List<AccountResponse>>>;

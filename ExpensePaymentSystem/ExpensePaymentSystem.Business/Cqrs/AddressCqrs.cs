@@ -11,4 +11,4 @@ public record DeleteAddressCommand(int Id) : IRequest<ApiResponse>;
 
 public record GetAllAddressesQuery() : IRequest<ApiResponse<List<AddressResponse>>>;
 public record GetAddressByIdQuery(int Id) : IRequest<ApiResponse<AddressResponse>>;
-public record GetAddressByParameterQuery(int UserId, string County, string PostalCode) : IRequest<ApiResponse<List<AddressResponse>>>;
+public record GetAddressByParameterQuery(int EmployeeId, string County, string PostalCode) : IRequest<ApiResponse<List<AddressResponse>>>;

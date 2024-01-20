@@ -9,4 +9,4 @@ public record DeleteContactCommand(int Id) : IRequest<ApiResponse>;
 
 public record GetAllContactsQuery() : IRequest<ApiResponse<List<ContactResponse>>>;
 public record GetContactByIdQuery(int Id) : IRequest<ApiResponse<ContactResponse>>;
-public record GetContactsByParameterQuery(int UserId, string ContactType, string Information) : IRequest<ApiResponse<List<ContactResponse>>>;
+public record GetContactsByParameterQuery(int EmployeeId, string ContactType, string Information) : IRequest<ApiResponse<List<ContactResponse>>>;

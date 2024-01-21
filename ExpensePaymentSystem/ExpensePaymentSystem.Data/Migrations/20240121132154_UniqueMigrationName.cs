@@ -43,7 +43,12 @@ namespace ExpensePaymentSystem.Data.Migrations
                     IdentityNumber = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
                     Role = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    LastActivityDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PasswordRetryCount = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    Status = table.Column<int>(type: "int", nullable: false, defaultValue: 1),
                     InsertUserId = table.Column<int>(type: "int", nullable: false),
                     InsertDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateUserId = table.Column<int>(type: "int", nullable: true),
@@ -72,33 +77,6 @@ namespace ExpensePaymentSystem.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PaymentMethod", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "SystemUser",
-                schema: "dbo",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Role = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    LastActivityDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PasswordRetryCount = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
-                    Status = table.Column<int>(type: "int", nullable: false, defaultValue: 1),
-                    InsertUserId = table.Column<int>(type: "int", nullable: false),
-                    InsertDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateUserId = table.Column<int>(type: "int", nullable: true),
-                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SystemUser", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -282,6 +260,13 @@ namespace ExpensePaymentSystem.Data.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_Employee_UserName",
+                schema: "dbo",
+                table: "Employee",
+                column: "UserName",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ExpenseClaim_CategoryId",
                 schema: "dbo",
                 table: "ExpenseClaim",
@@ -298,13 +283,6 @@ namespace ExpensePaymentSystem.Data.Migrations
                 schema: "dbo",
                 table: "ExpenseClaim",
                 column: "PaymentMethodId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SystemUser_UserName",
-                schema: "dbo",
-                table: "SystemUser",
-                column: "UserName",
-                unique: true);
         }
 
         /// <inheritdoc />
@@ -324,10 +302,6 @@ namespace ExpensePaymentSystem.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "ExpenseClaim",
-                schema: "dbo");
-
-            migrationBuilder.DropTable(
-                name: "SystemUser",
                 schema: "dbo");
 
             migrationBuilder.DropTable(

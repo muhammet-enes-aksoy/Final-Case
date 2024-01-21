@@ -18,7 +18,7 @@ public class AccountsController : ControllerBase
         this.mediator = mediator;
     }
 
-    [HttpGet("MyAddresses")]
+    [HttpGet("MyAccounts")]
     [Authorize(Roles = "Employee, Admin")]
     public async Task<ApiResponse<AccountResponse>> MyProfile()
     {

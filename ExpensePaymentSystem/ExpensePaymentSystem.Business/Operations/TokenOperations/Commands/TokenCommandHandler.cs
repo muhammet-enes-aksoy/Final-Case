@@ -30,7 +30,7 @@ public class TokenCommandHandler :
     
     public async Task<ApiResponse<TokenResponse>> Handle(CreateTokenCommand request, CancellationToken cancellationToken)
     {
-        var user = await dbContext.Set<SystemUser>().Where(x => x.UserName == request.Model.UserName)
+        var user = await dbContext.Set<Employee>().Where(x => x.UserName == request.Model.UserName)
             .FirstOrDefaultAsync(cancellationToken);
         if (user == null)
         {
@@ -63,13 +63,12 @@ public class TokenCommandHandler :
 
         return new ApiResponse<TokenResponse>( new TokenResponse()
         {
-            Email = user.Email,
             Token = token,
             ExpireDate =  DateTime.Now.AddMinutes(jwtConfig.AccessTokenExpiration)
         });
     }
     
-    private string Token(SystemUser user)
+    private string Token(Employee user)
     {
         Claim[] claims = GetClaims(user);
         var secret = Encoding.ASCII.GetBytes(jwtConfig.Secret);
@@ -86,12 +85,11 @@ public class TokenCommandHandler :
         return accessToken;
     }
     
-    private Claim[] GetClaims(SystemUser user)
+    private Claim[] GetClaims(Employee user)
     {
         var claims = new[]
         {
             new Claim("Id", user.Id.ToString()),
-            new Claim("Email", user.Email),
             new Claim("UserName", user.UserName),
             new Claim(ClaimTypes.Role, user.Role)
         };

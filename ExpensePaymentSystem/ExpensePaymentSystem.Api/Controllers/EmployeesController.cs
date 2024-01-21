@@ -21,8 +21,8 @@ public class EmployeesController : ControllerBase
     }
 
     
-    [HttpGet("MyAddresses")]
-    [Authorize(Roles = "Employee, admin")]
+    [HttpGet("MyProfile")]
+    [Authorize(Roles = "Employee, Admin")]
     public async Task<ApiResponse<EmployeeResponse>> MyProfile()
     {
         string id = (User.Identity as ClaimsIdentity).FindFirst("Id")?.Value;
@@ -31,7 +31,7 @@ public class EmployeesController : ControllerBase
         return result;
     }
     [HttpGet]
-    [Authorize(Roles = "Employee, Admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<List<EmployeeResponse>>> Get()
     {
         var operation = new GetAllEmployeeQuery();
@@ -49,7 +49,7 @@ public class EmployeesController : ControllerBase
     }
 
     [HttpGet("ByParameters")]
-    [Authorize(Roles = "Employee, Admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<List<EmployeeResponse>>> GetByParameter(
         [FromQuery] string? FirstName,
         [FromQuery] string? LastName)
@@ -60,7 +60,7 @@ public class EmployeesController : ControllerBase
     }
 
     [HttpPost]
-    [Authorize(Roles = "Employee, Admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<EmployeeResponse>> Post([FromBody] EmployeeRequest Employee)
     {
         var operation = new CreateEmployeeCommand(Employee);
@@ -69,7 +69,7 @@ public class EmployeesController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    [Authorize(Roles = "Employee, Admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse> Put(int id, [FromBody] EmployeeRequest Employee)
     {
         var operation = new UpdateEmployeeCommand(id,Employee );
@@ -77,8 +77,18 @@ public class EmployeesController : ControllerBase
         return result;
     }
 
+    [HttpPut("UdateMyProfile")]
+    [Authorize(Roles = "Employee")]
+    public async Task<ApiResponse> Put([FromBody] EmployeeRequest Employee)
+    {
+        int id = int.Parse((User.Identity as ClaimsIdentity).FindFirst("Id")?.Value);
+        var operation = new UpdateEmployeeCommand(id,Employee );
+        var result = await mediator.Send(operation);
+        return result;
+    }
+
     [HttpDelete("{id}")]
-    [Authorize(Roles = "Employee, Admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse> Delete(int id)
     {
         var operation = new DeleteEmployeeCommand(id);

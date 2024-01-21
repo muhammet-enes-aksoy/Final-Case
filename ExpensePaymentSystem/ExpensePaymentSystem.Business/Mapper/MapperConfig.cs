@@ -43,8 +43,6 @@ public class MapperConfig : Profile
         CreateMap<EmployeeRequest, Employee>();
         CreateMap<Employee, EmployeeResponse>();
 
-        CreateMap<SystemUserRequest, SystemUser>();
-        CreateMap<SystemUser, SystemUserResponse>();
 
     }
 }

@@ -18,7 +18,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpGet]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, Employee")]
     public async Task<ApiResponse<List<CategoryResponse>>> Get()
     {
         var operation = new GetAllCategoriesQuery();

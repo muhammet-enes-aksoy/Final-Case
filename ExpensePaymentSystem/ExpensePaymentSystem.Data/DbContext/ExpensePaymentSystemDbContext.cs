@@ -1,14 +1,14 @@
+
 using ExpensePaymentSystem.Data.Entity;
 using Microsoft.EntityFrameworkCore;
-
 namespace ExpensePaymentSystem.Data;
 public class ExpensePaymentSystemDbContext : DbContext
 {
-    public ExpensePaymentSystemDbContext(DbContextOptions<ExpensePaymentSystemDbContext> options): base(options)
+    public ExpensePaymentSystemDbContext(DbContextOptions<ExpensePaymentSystemDbContext> options) : base(options)
     {
-    
-    }   
-    
+
+    }
+
     // dbset 
     public DbSet<Account> Accounts { get; set; }
     public DbSet<Address> Addresses { get; set; }
@@ -28,7 +28,8 @@ public class ExpensePaymentSystemDbContext : DbContext
         modelBuilder.ApplyConfiguration(new ExpenseClaimConfiguration());
         modelBuilder.ApplyConfiguration(new PaymentMethodConfiguration());
         modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
+
         base.OnModelCreating(modelBuilder);
     }
-    
+
 }

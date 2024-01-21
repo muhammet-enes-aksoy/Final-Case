@@ -13,6 +13,7 @@ using ExpensePaymentSystem.Base.Token;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
+using ExpensePaymentSystem.Business.Services;
 
 namespace ExpensePaymentSystem.Api;
 
@@ -35,7 +36,7 @@ public class Startup
 
         //var mapperConfig = new MapperConfiguration(cfg => cfg.AddProfile(new MapperConfig()));
         //services.AddAutoMapper(typeof(AssemblyReference).GetTypeInfo().Assembly);
-
+        services.AddScoped<ReportService>();
         services.AddControllers().AddFluentValidation(x =>
             x.RegisterValidatorsFromAssemblyContaining<AssemblyReference>());
 

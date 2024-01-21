@@ -12,24 +12,31 @@ public class ReportController : ControllerBase
         _reportService = reportService;
     }
 
-    [HttpGet("employee-report")]
-    public IActionResult GetEmployeeReport(int employeeId)
+    [HttpGet("employee/{employeeId}/expenses")]
+    public IActionResult GetEmployeeExpenseReport(int employeeId)
     {
         var report = _reportService.GetEmployeeReport(employeeId);
         return Ok(report);
     }
 
-    [HttpGet("payment-intensity-report")]
+    [HttpGet("payment-intensity")]
     public IActionResult GetPaymentIntensityReport(DateTime startDate, DateTime endDate)
     {
         var report = _reportService.GetPaymentIntensityReport(startDate, endDate);
         return Ok(report);
     }
-    
-    [HttpGet("approval-status")]
-    public IActionResult GetApprovalStatusReport(DateTime reportDate)
+
+    [HttpGet("employee/{employeeId}/payment-intensity")]
+    public IActionResult GetEmployeePaymentIntensityReport(int employeeId, DateTime startDate, DateTime endDate)
     {
-        var report = _reportService.GetApprovalStatusReport(reportDate);
+        var report = _reportService.GetEmployeePaymentIntensityReport(employeeId, startDate, endDate);
+        return Ok(report);
+    }
+
+    [HttpGet("approval-status")]
+    public IActionResult GetApprovalStatusReport(DateTime startDate, DateTime endDate)
+    {
+        var report = _reportService.GetApprovalStatusReport(startDate, endDate);
         return Ok(report);
     }
 }

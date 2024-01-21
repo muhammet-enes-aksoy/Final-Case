@@ -44,27 +44,51 @@ public class ReportService
     }
 
 
-    public ApprovalStatusReportModel GetApprovalStatusReport(DateTime reportDate)
+    // Şirket için personel bazlı günlük, haftalık ve aylık harcama yoğunluğu raporları
+    public List<PaymentIntensityReportModel> GetEmployeePaymentIntensityReport(int employeeId, DateTime startDate, DateTime endDate)
     {
-        using (var connection = new SqlConnection(_dbContext.Database.GetDbConnection().ConnectionString))
+         using (var connection = new SqlConnection(_dbContext.Database.GetConnectionString()))
         {
             connection.Open();
 
-            var parameters = new { ReportDate = reportDate.Date };
+            string sql = @"SELECT CONVERT(date, ClaimDate) as ReportDate, 
+                                  SUM(Amount) as TotalPaymentAmount 
+                           FROM ExpenseClaim 
+                           WHERE EmployeeId = @EmployeeId AND ClaimDate BETWEEN @StartDate AND @EndDate
+                           GROUP BY CONVERT(date, ClaimDate)";
 
-            string approvedSql = "SELECT COALESCE(SUM(Amount), 0) FROM ExpenseClaim WHERE Status = 1 AND CAST(ClaimDate AS DATE) = @ReportDate";
-            decimal approvedAmount = connection.ExecuteScalar<decimal>(approvedSql, parameters);
+            return connection.Query<PaymentIntensityReportModel>(sql, new { EmployeeId = employeeId, StartDate = startDate, EndDate = endDate }).ToList();
+        }
+    }
 
-            string rejectedSql = "SELECT COALESCE(SUM(Amount), 0) FROM ExpenseClaim WHERE Status = 2 AND CAST(ClaimDate AS DATE) = @ReportDate";
-            decimal rejectedAmount = connection.ExecuteScalar<decimal>(rejectedSql, parameters);
+    // Şirket için günlük, haftalık ve aylık onaylanan ve red edilen masraf miktarları raporu
+    public ApprovalStatusReportModel GetApprovalStatusReport(DateTime startDate, DateTime endDate)
+    {
+         using (var connection = new SqlConnection(_dbContext.Database.GetConnectionString()))
+        {
+            connection.Open();
 
-            return new ApprovalStatusReportModel
+            var parameters = new
             {
-                ReportDate = reportDate,
-                ApprovedAmount = approvedAmount,
-                RejectedAmount = rejectedAmount,
+                StartDate = startDate.Date,
+                EndDate = endDate.Date
+            };
+
+            string approvedSql = "SELECT CONVERT(date, ClaimDate) as ReportDate, COALESCE(SUM(Amount), 0) as ApprovedAmount FROM ExpenseClaim WHERE Status = 2 AND CAST(ClaimDate AS DATE) BETWEEN @StartDate AND @EndDate GROUP BY CONVERT(date, ClaimDate)";
+            string rejectedSql = "SELECT CONVERT(date, ClaimDate) as ReportDate, COALESCE(SUM(Amount), 0) as RejectedAmount FROM ExpenseClaim WHERE Status = 3 AND CAST(ClaimDate AS DATE) BETWEEN @StartDate AND @EndDate GROUP BY CONVERT(date, ClaimDate)";
+
+            var approvedAmounts = connection.Query<ApprovalStatusReportItemModel>(approvedSql, parameters).ToDictionary(x => x.ReportDate);
+            var rejectedAmounts = connection.Query<ApprovalStatusReportItemModel>(rejectedSql, parameters).ToDictionary(x => x.ReportDate);
+
+            var result = new ApprovalStatusReportModel
+            {
+                ReportDateRange = new DateRange { StartDate = startDate.Date, EndDate = endDate.Date },
+                ApprovedAmounts = approvedAmounts,
+                RejectedAmounts = rejectedAmounts
                 // Diğer özellikleri buraya ekleyin
             };
+
+            return result;
         }
     }
 }

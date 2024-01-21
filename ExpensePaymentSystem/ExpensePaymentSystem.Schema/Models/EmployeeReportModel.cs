@@ -15,11 +15,27 @@ public class PaymentIntensityReportModel
     // Diğer gerekli özellikleri ekleyin
 }
 
-public class ApprovalStatusReportModel
+// ApprovalStatusReportItemModel: Onay durumu raporlarında kullanılan iç içe model
+public class ApprovalStatusReportItemModel
 {
     public DateTime ReportDate { get; set; }
-    public decimal ApprovedAmount { get; set; }
-    public decimal RejectedAmount { get; set; }
+    public decimal Amount { get; set; }
     // Diğer özellikleri ekleyin
 }
 
+// ApprovalStatusReportModel: Onay durumu raporları için model
+public class ApprovalStatusReportModel
+{
+    public DateRange ReportDateRange { get; set; }
+    public Dictionary<DateTime, ApprovalStatusReportItemModel> ApprovedAmounts { get; set; }
+    public Dictionary<DateTime, ApprovalStatusReportItemModel> RejectedAmounts { get; set; }
+    // Diğer özellikleri ekleyin
+}
+
+// DateRange: Tarih aralığı temsil eden model
+public class DateRange
+{
+    public DateTime StartDate { get; set; }
+    public DateTime EndDate { get; set; }
+    // Diğer özellikleri ekleyin
+}

@@ -37,6 +37,9 @@ public class Startup
         //var mapperConfig = new MapperConfiguration(cfg => cfg.AddProfile(new MapperConfig()));
         //services.AddAutoMapper(typeof(AssemblyReference).GetTypeInfo().Assembly);
         services.AddScoped<ReportService>();
+        services.AddHttpClient<PaymentSimulationService>();
+        //services.AddHostedService<PaymentSimulationBackgroundService>();
+
         services.AddControllers().AddFluentValidation(x =>
             x.RegisterValidatorsFromAssemblyContaining<AssemblyReference>());
 

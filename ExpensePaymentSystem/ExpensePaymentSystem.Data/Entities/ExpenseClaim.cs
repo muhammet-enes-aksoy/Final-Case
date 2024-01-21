@@ -42,7 +42,7 @@ public class ExpenseClaimConfiguration : IEntityTypeConfiguration<ExpenseClaim>
         builder.Property(x => x.PaymentMethodId).IsRequired(true);
         builder.Property(x => x.PaymentLocation).IsRequired(true).HasMaxLength(50);
         builder.Property(x => x.ReceiptNumber).IsRequired(true).HasMaxLength(50);
-        builder.Property(x => x.Status).IsRequired(false).HasMaxLength(1).HasDefaultValue(1);
+        builder.Property(x => x.Status).IsRequired(false).HasMaxLength(50).HasDefaultValue(1);
         builder.Property(x => x.StatusDescription).IsRequired(false).HasMaxLength(50).HasDefaultValue("StatusDescription");
         builder.Property(x => x.IsProcessed).IsRequired(true).HasDefaultValue(false);
         builder.Property(x => x.Amount).IsRequired(true).HasPrecision(18, 4);

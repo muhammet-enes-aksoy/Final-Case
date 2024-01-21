@@ -52,10 +52,10 @@ public class ReportService
 
             var parameters = new { ReportDate = reportDate.Date };
 
-            string approvedSql = "SELECT COALESCE(SUM(Amount), 0) FROM ExpenseClaims WHERE ApprovalStatus = 1 AND CAST(ClaimDate AS DATE) = @ReportDate";
+            string approvedSql = "SELECT COALESCE(SUM(Amount), 0) FROM ExpenseClaim WHERE Status = 1 AND CAST(ClaimDate AS DATE) = @ReportDate";
             decimal approvedAmount = connection.ExecuteScalar<decimal>(approvedSql, parameters);
 
-            string rejectedSql = "SELECT COALESCE(SUM(Amount), 0) FROM ExpenseClaims WHERE ApprovalStatus = 2 AND CAST(ClaimDate AS DATE) = @ReportDate";
+            string rejectedSql = "SELECT COALESCE(SUM(Amount), 0) FROM ExpenseClaim WHERE Status = 2 AND CAST(ClaimDate AS DATE) = @ReportDate";
             decimal rejectedAmount = connection.ExecuteScalar<decimal>(rejectedSql, parameters);
 
             return new ApprovalStatusReportModel

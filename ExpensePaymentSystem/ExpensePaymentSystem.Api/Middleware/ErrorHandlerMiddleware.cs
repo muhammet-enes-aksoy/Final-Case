@@ -1,6 +1,7 @@
 using System.Data.Common;
 using System.Net;
 using System.Text.Json;
+using ExpensePaymentSystem.Business.Services;
 using Serilog;
 
 namespace ExpensePaymentSystem.Api.Middleware;
@@ -8,14 +9,16 @@ namespace ExpensePaymentSystem.Api.Middleware;
 public class ErrorHandlerMiddleware
 {
     private readonly RequestDelegate next;
+    private readonly IServiceProvider _serviceProvider;
 
-    public ErrorHandlerMiddleware(RequestDelegate next)
+    public ErrorHandlerMiddleware(RequestDelegate next, IServiceProvider _serviceProvider)
     {
         this.next = next;
+        this._serviceProvider = _serviceProvider;
     }
 
 
-    public async Task Invoke(HttpContext context)
+    public async Task Invoke(HttpContext context, IServiceProvider IServiceProvider)
     {
         try
         {

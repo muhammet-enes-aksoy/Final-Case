@@ -4,6 +4,7 @@ using System.Data.SqlClient; // Dapper'ı kullanabilmek için gerekli
 using System.Linq;
 using Dapper;
 using ExpensePaymentSystem.Data;
+using ExpensePaymentSystem.Data.Entity;
 using ExpensePaymentSystem.Schema;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,15 +19,48 @@ public class ReportService
     }
 
     public List<EmployeeReportModel> GetEmployeeReport(int employeeId)
+{
+    using (var connection = new SqlConnection(_dbContext.Database.GetDbConnection().ConnectionString))
     {
-        using (var connection = new SqlConnection(_dbContext.Database.GetDbConnection().ConnectionString))
-        {
-            connection.Open();
+        connection.Open();
 
-            string sql = "SELECT Id as EmployeeId, FirstName, LastName FROM Employee WHERE Id = @EmployeeId";
-            return connection.Query<EmployeeReportModel>(sql, new { EmployeeId = employeeId }).ToList();
-        }
+        string sql = @"
+            SELECT 
+                e.Id as EmployeeId, 
+                e.FirstName, 
+                e.LastName,
+                ec.Id as ExpenseClaimId,
+                ec.ClaimDate,
+                ec.Amount,
+                ec.PaymentLocation,
+                ec.PaymentMethodId,
+                ec.CategoryId,
+                ec.Status,
+                ec.StatusDescription,
+                ec.ReceiptNumber
+            FROM Employee e
+            LEFT JOIN ExpenseClaim ec ON e.Id = ec.EmployeeId
+            WHERE e.Id = @EmployeeId";
+
+        var result = connection.Query<EmployeeReportModel, ExpenseClaimResponse, EmployeeReportModel>(
+            sql,
+            (employee, expenseClaim) =>
+            {
+                if (employee.ExpenseClaimResponse == null)
+                    employee.ExpenseClaimResponse = new List<ExpenseClaimResponse>();
+
+                expenseClaim.EmployeeName = employee.FirstName + " " + employee.LastName;
+                employee.ExpenseClaimResponse.Add(expenseClaim);
+                
+                return employee;
+            },
+            new { EmployeeId = employeeId },
+            splitOn: "ExpenseClaimId"
+        ).Distinct().ToList();
+
+        return result;
     }
+}
 
     public List<PaymentIntensityReportModel> GetPaymentIntensityReport(DateTime startDate, DateTime endDate)
     {
@@ -47,7 +81,7 @@ public class ReportService
     // Şirket için personel bazlı günlük, haftalık ve aylık harcama yoğunluğu raporları
     public List<PaymentIntensityReportModel> GetEmployeePaymentIntensityReport(int employeeId, DateTime startDate, DateTime endDate)
     {
-         using (var connection = new SqlConnection(_dbContext.Database.GetConnectionString()))
+        using (var connection = new SqlConnection(_dbContext.Database.GetConnectionString()))
         {
             connection.Open();
 
@@ -64,31 +98,38 @@ public class ReportService
     // Şirket için günlük, haftalık ve aylık onaylanan ve red edilen masraf miktarları raporu
     public ApprovalStatusReportModel GetApprovalStatusReport(DateTime startDate, DateTime endDate)
     {
-         using (var connection = new SqlConnection(_dbContext.Database.GetConnectionString()))
+        using (var connection = new SqlConnection(_dbContext.Database.GetConnectionString()))
+    {
+        connection.Open();
+
+        string approvedSql = @"
+            SELECT CONVERT(date, ClaimDate) as ReportDate, 
+                   COALESCE(SUM(Amount), 0) as ApprovedAmount 
+            FROM ExpenseClaim 
+            WHERE Status = 2 AND ClaimDate BETWEEN @StartDate AND @EndDate 
+            GROUP BY CONVERT(date, ClaimDate)";
+
+        string rejectedSql = @"
+            SELECT CONVERT(date, ClaimDate) as ReportDate, 
+                   COALESCE(SUM(Amount), 0) as RejectedAmount 
+            FROM ExpenseClaim 
+            WHERE Status = 3 AND ClaimDate BETWEEN @StartDate AND @EndDate 
+            GROUP BY CONVERT(date, ClaimDate)";
+
+        var parameters = new { StartDate = startDate, EndDate = endDate };
+
+        var approvedAmounts = connection.Query<ApprovalStatusReportItemModel>(approvedSql, parameters).ToDictionary(x => x.ReportDate);
+        var rejectedAmounts = connection.Query<ApprovalStatusReportItemModel>(rejectedSql, parameters).ToDictionary(x => x.ReportDate);
+
+        var result = new ApprovalStatusReportModel
         {
-            connection.Open();
+            ReportDateRange = new DateRange { StartDate = startDate.Date, EndDate = endDate.Date },
+            ApprovedAmounts = approvedAmounts,
+            RejectedAmounts = rejectedAmounts
+            // Diğer özellikleri buraya ekleyin
+        };
 
-            var parameters = new
-            {
-                StartDate = startDate.Date,
-                EndDate = endDate.Date
-            };
-
-            string approvedSql = "SELECT CONVERT(date, ClaimDate) as ReportDate, COALESCE(SUM(Amount), 0) as ApprovedAmount FROM ExpenseClaim WHERE Status = 2 AND CAST(ClaimDate AS DATE) BETWEEN @StartDate AND @EndDate GROUP BY CONVERT(date, ClaimDate)";
-            string rejectedSql = "SELECT CONVERT(date, ClaimDate) as ReportDate, COALESCE(SUM(Amount), 0) as RejectedAmount FROM ExpenseClaim WHERE Status = 3 AND CAST(ClaimDate AS DATE) BETWEEN @StartDate AND @EndDate GROUP BY CONVERT(date, ClaimDate)";
-
-            var approvedAmounts = connection.Query<ApprovalStatusReportItemModel>(approvedSql, parameters).ToDictionary(x => x.ReportDate);
-            var rejectedAmounts = connection.Query<ApprovalStatusReportItemModel>(rejectedSql, parameters).ToDictionary(x => x.ReportDate);
-
-            var result = new ApprovalStatusReportModel
-            {
-                ReportDateRange = new DateRange { StartDate = startDate.Date, EndDate = endDate.Date },
-                ApprovedAmounts = approvedAmounts,
-                RejectedAmounts = rejectedAmounts
-                // Diğer özellikleri buraya ekleyin
-            };
-
-            return result;
-        }
+        return result;
+    }
     }
 }

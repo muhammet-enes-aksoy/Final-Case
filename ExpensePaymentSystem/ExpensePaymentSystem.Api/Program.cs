@@ -13,6 +13,7 @@ public static class Program
             .ConfigureWebHostDefaults(webBuilder =>
             {
                 webBuilder.UseStartup<Startup>();
-            }).Build().Run();
+                webBuilder.UseDefaultServiceProvider(options => options.ValidateScopes = false);
+            }).Build().Run();   
     }
 }

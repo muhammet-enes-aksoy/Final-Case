@@ -1,0 +1,520 @@
+2024-01-22 00:43:30.930 [INF] App server is starting.
+2024-01-22 00:48:06.444 [INF] App server is starting.
+2024-01-22 00:48:33.713 [INF] App server is starting.
+2024-01-22 00:49:03.642 [INF] App server is starting.
+2024-01-22 00:52:44.183 [INF] App server is starting.
+2024-01-22 00:53:26.301 [INF] App server is starting.
+2024-01-22 00:54:08.964 [INF] App server is starting.
+2024-01-22 00:54:23.610 [INF] App server is starting.
+2024-01-22 00:57:50.445 [INF] App server is starting.
+2024-01-22 01:00:21.561 [INF] App server is starting.
+2024-01-22 01:02:04.041 [INF] App server is starting.
+2024-01-22 01:03:55.661 [INF] App server is starting.
+2024-01-22 01:06:27.365 [INF] App server is starting.
+2024-01-22 01:06:52.797 [INF] App server is starting.
+2024-01-22 01:08:02.143 [INF] App server is starting.
+2024-01-22 01:08:15.466 [INF] App server is starting.
+2024-01-22 01:08:42.760 [INF] App server is starting.
+2024-01-22 01:09:42.134 [INF] App server is starting.
+2024-01-22 01:10:47.930 [INF] App server is starting.
+2024-01-22 01:10:48.557 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:10:48.558 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:10:48.558 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:10:48.559 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:10:48.559 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:10:48.559 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:10:48.559 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:10:49.523 [ERR] Odeme simülasyonu başarısız. Talep ID: 2
+2024-01-22 01:10:49.707 [ERR] Odeme simülasyonu başarısız. Talep ID: 3
+2024-01-22 01:10:49.879 [ERR] Odeme simülasyonu başarısız. Talep ID: 4
+2024-01-22 01:10:50.084 [ERR] Odeme simülasyonu başarısız. Talep ID: 2
+2024-01-22 01:10:50.262 [ERR] Odeme simülasyonu başarısız. Talep ID: 3
+2024-01-22 01:10:50.434 [ERR] Odeme simülasyonu başarısız. Talep ID: 4
+2024-01-22 01:11:50.151 [INF] App server is starting.
+2024-01-22 01:11:50.782 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:11:50.783 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:11:50.783 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:11:50.783 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:11:50.783 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:11:50.783 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:11:50.783 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:11:51.736 [ERR] Odeme simülasyonu başarısız. Talep ID: 2
+2024-01-22 01:11:51.906 [ERR] Odeme simülasyonu başarısız. Talep ID: 3
+2024-01-22 01:11:52.077 [ERR] Odeme simülasyonu başarısız. Talep ID: 4
+2024-01-22 01:11:52.288 [ERR] Odeme simülasyonu başarısız. Talep ID: 2
+2024-01-22 01:11:52.457 [ERR] Odeme simülasyonu başarısız. Talep ID: 3
+2024-01-22 01:11:52.627 [ERR] Odeme simülasyonu başarısız. Talep ID: 4
+2024-01-22 01:12:26.378 [INF] App server is starting.
+2024-01-22 01:12:26.992 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:12:26.993 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:12:26.993 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:12:26.994 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:12:26.994 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:12:26.994 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:12:26.994 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:12:27.873 [ERR] Odeme simülasyonu başarısız. Talep ID: 2
+2024-01-22 01:12:28.042 [ERR] Odeme simülasyonu başarısız. Talep ID: 3
+2024-01-22 01:12:28.210 [ERR] Odeme simülasyonu başarısız. Talep ID: 4
+2024-01-22 01:12:28.413 [ERR] Odeme simülasyonu başarısız. Talep ID: 2
+2024-01-22 01:12:28.583 [ERR] Odeme simülasyonu başarısız. Talep ID: 3
+2024-01-22 01:12:28.751 [ERR] Odeme simülasyonu başarısız. Talep ID: 4
+2024-01-22 01:14:28.772 [ERR] Odeme simülasyonu başarısız. Talep ID: 2
+2024-01-22 01:14:28.952 [ERR] Odeme simülasyonu başarısız. Talep ID: 2
+2024-01-22 01:14:29.124 [ERR] Odeme simülasyonu başarısız. Talep ID: 3
+2024-01-22 01:14:29.255 [ERR] Odeme simülasyonu başarısız. Talep ID: 3
+2024-01-22 01:14:29.295 [ERR] Odeme simülasyonu başarısız. Talep ID: 4
+2024-01-22 01:14:29.505 [ERR] Odeme simülasyonu başarısız. Talep ID: 4
+2024-01-22 01:15:29.205 [INF] App server is starting.
+2024-01-22 01:15:29.841 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:15:29.843 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:15:29.843 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:15:29.843 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:15:29.843 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:15:29.843 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:15:29.843 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:15:30.736 [ERR] Odeme simülasyonu başarısız. Talep ID: 2
+2024-01-22 01:15:30.911 [ERR] Odeme simülasyonu başarısız. Talep ID: 3
+2024-01-22 01:15:31.090 [ERR] Odeme simülasyonu başarısız. Talep ID: 4
+2024-01-22 01:15:31.294 [ERR] Odeme simülasyonu başarısız. Talep ID: 2
+2024-01-22 01:15:31.466 [ERR] Odeme simülasyonu başarısız. Talep ID: 3
+2024-01-22 01:15:31.641 [ERR] Odeme simülasyonu başarısız. Talep ID: 4
+2024-01-22 01:17:26.267 [INF] App server is starting.
+2024-01-22 01:17:26.886 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:17:26.887 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:17:26.887 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:17:26.887 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:17:26.887 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:17:26.887 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:17:26.887 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:17:27.773 [ERR] Ödeme simülasyonu başarısız. Talep ID: 2
+2024-01-22 01:17:27.944 [ERR] Ödeme simülasyonu başarısız. Talep ID: 3
+2024-01-22 01:17:28.115 [ERR] Ödeme simülasyonu başarısız. Talep ID: 4
+2024-01-22 01:17:28.324 [ERR] Ödeme simülasyonu başarısız. Talep ID: 2
+2024-01-22 01:17:28.493 [ERR] Ödeme simülasyonu başarısız. Talep ID: 3
+2024-01-22 01:17:28.664 [ERR] Ödeme simülasyonu başarısız. Talep ID: 4
+2024-01-22 01:19:48.635 [INF] App server is starting.
+2024-01-22 01:19:49.256 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:19:49.257 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:19:49.257 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:19:49.257 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:19:49.257 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:19:49.257 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:19:49.257 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:19:50.261 [ERR] Ödeme simülasyonu başarılı. Talep ID: 2
+2024-01-22 01:19:50.435 [ERR] Ödeme simülasyonu başarılı. Talep ID: 3
+2024-01-22 01:19:50.609 [ERR] Ödeme simülasyonu başarılı. Talep ID: 4
+2024-01-22 01:21:22.990 [INF] App server is starting.
+2024-01-22 01:21:24.160 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:21:24.161 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:21:24.161 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:21:24.162 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:21:24.162 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:21:24.162 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:21:24.162 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:26:28.674 [INF] App server is starting.
+2024-01-22 01:26:29.226 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:26:29.228 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:26:29.228 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:26:29.228 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:26:29.228 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:26:29.228 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:26:29.228 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:26:56.077 [WRN] Failed to determine the https port for redirect.
+2024-01-22 01:31:32.627 [INF] App server is starting.
+2024-01-22 01:31:33.237 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:31:33.239 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:31:33.239 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:31:33.239 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:31:33.239 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:31:33.239 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:31:33.239 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:31:57.886 [WRN] Failed to determine the https port for redirect.
+2024-01-22 01:31:58.041 [ERR] UnexpectedError
+System.Data.SqlClient.SqlException (0x80131904): Column 'ExpenseClaim.ClaimDate' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1094
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at ExpensePaymentSystem.Business.Services.ReportService.GetApprovalStatusReport(DateTime startDate, DateTime endDate) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Business\Services\ReportService.cs:line 83
+   at ReportController.GetApprovalStatusReport(DateTime startDate, DateTime endDate) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Api\Controllers\ReportController.cs:line 39
+   at lambda_method14(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ExpensePaymentSystem.Api.Middleware.ErrorHandlerMiddleware.Invoke(HttpContext context, IServiceProvider IServiceProvider) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Api\Middleware\ErrorHandlerMiddleware.cs:line 25
+ClientConnectionId:fa3c3c94-e285-4ed7-b59e-9ab44e8a9f20
+Error Number:8120,State:1,Class:16
+2024-01-22 01:31:58.061 [FTL] Path=/api/Report/approval-status || Method=GET || Exception=Column 'ExpenseClaim.ClaimDate' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.
+2024-01-22 01:35:30.243 [INF] App server is starting.
+2024-01-22 01:35:30.864 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:35:30.865 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:35:30.865 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:35:30.865 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:35:30.865 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:35:30.865 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:35:30.865 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:35:52.185 [WRN] Failed to determine the https port for redirect.
+2024-01-22 01:35:52.337 [ERR] UnexpectedError
+System.Data.SqlClient.SqlException (0x80131904): Column 'ExpenseClaim.ClaimDate' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1094
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at ExpensePaymentSystem.Business.Services.ReportService.GetApprovalStatusReport(DateTime startDate, DateTime endDate) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Business\Services\ReportService.cs:line 83
+   at ReportController.GetApprovalStatusReport(DateTime startDate, DateTime endDate) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Api\Controllers\ReportController.cs:line 39
+   at lambda_method14(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ExpensePaymentSystem.Api.Middleware.ErrorHandlerMiddleware.Invoke(HttpContext context, IServiceProvider IServiceProvider) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Api\Middleware\ErrorHandlerMiddleware.cs:line 25
+ClientConnectionId:fb29a2df-bedc-42d9-9e0f-550913da28c3
+Error Number:8120,State:1,Class:16
+2024-01-22 01:35:52.356 [FTL] Path=/api/Report/approval-status || Method=GET || Exception=Column 'ExpenseClaim.ClaimDate' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.
+2024-01-22 01:36:08.218 [ERR] UnexpectedError
+System.Data.SqlClient.SqlException (0x80131904): Column 'ExpenseClaim.ClaimDate' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1094
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at ExpensePaymentSystem.Business.Services.ReportService.GetApprovalStatusReport(DateTime startDate, DateTime endDate) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Business\Services\ReportService.cs:line 83
+   at ReportController.GetApprovalStatusReport(DateTime startDate, DateTime endDate) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Api\Controllers\ReportController.cs:line 39
+   at lambda_method14(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ExpensePaymentSystem.Api.Middleware.ErrorHandlerMiddleware.Invoke(HttpContext context, IServiceProvider IServiceProvider) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Api\Middleware\ErrorHandlerMiddleware.cs:line 25
+ClientConnectionId:fb29a2df-bedc-42d9-9e0f-550913da28c3
+Error Number:8120,State:1,Class:16
+2024-01-22 01:36:08.220 [FTL] Path=/api/Report/approval-status || Method=GET || Exception=Column 'ExpenseClaim.ClaimDate' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.
+2024-01-22 01:38:32.319 [INF] App server is starting.
+2024-01-22 01:38:32.958 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:38:32.959 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:38:32.959 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:38:32.959 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:38:32.959 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:38:32.960 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:38:32.960 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:38:53.651 [WRN] Failed to determine the https port for redirect.
+2024-01-22 01:41:14.994 [INF] App server is starting.
+2024-01-22 01:41:15.615 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:41:15.616 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:41:15.616 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:41:15.616 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:41:15.616 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:41:15.616 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:41:15.616 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:41:45.978 [WRN] Failed to determine the https port for redirect.
+2024-01-22 01:51:22.158 [INF] App server is starting.
+2024-01-22 01:51:22.814 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:51:22.815 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:51:22.815 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:51:22.815 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:51:22.815 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:51:22.815 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:51:22.815 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 01:51:39.843 [WRN] Failed to determine the https port for redirect.
+2024-01-22 02:00:31.285 [INF] App server is starting.
+2024-01-22 02:00:31.949 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:00:31.951 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:00:31.951 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:00:31.951 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:00:31.951 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:00:31.951 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:00:31.951 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:00:54.011 [WRN] Failed to determine the https port for redirect.
+2024-01-22 02:08:02.298 [INF] App server is starting.
+2024-01-22 02:08:02.973 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:08:02.975 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:08:02.975 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:08:02.975 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:08:02.975 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:08:02.975 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:08:02.975 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:08:13.941 [WRN] Failed to determine the https port for redirect.
+2024-01-22 02:11:24.939 [INF] App server is starting.
+2024-01-22 02:11:25.597 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:11:25.598 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:11:25.598 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:11:25.598 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:11:25.598 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:11:25.598 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:11:25.599 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:11:55.779 [INF] App server is starting.
+2024-01-22 02:11:56.988 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:11:56.989 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:11:56.989 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:11:56.989 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:11:56.989 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:11:56.989 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:11:56.989 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:12:24.998 [WRN] Failed to determine the https port for redirect.
+2024-01-22 02:18:00.200 [INF] App server is starting.
+2024-01-22 02:18:00.849 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:18:00.850 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:18:00.851 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:18:00.851 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:18:00.851 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:18:00.851 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:18:00.851 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:18:13.847 [WRN] Failed to determine the https port for redirect.
+2024-01-22 02:18:14.010 [ERR] UnexpectedError
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ExpenseClaims'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1094
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at ExpensePaymentSystem.Business.Services.ReportService.GetEmployeeReport(Int32 employeeId) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Business\Services\ReportService.cs:line 27
+   at ReportController.GetEmployeeExpenseReport(Int32 employeeId) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Api\Controllers\ReportController.cs:line 18
+   at lambda_method14(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ExpensePaymentSystem.Api.Middleware.ErrorHandlerMiddleware.Invoke(HttpContext context, IServiceProvider IServiceProvider) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Api\Middleware\ErrorHandlerMiddleware.cs:line 25
+ClientConnectionId:42056fe7-387d-469b-941e-748cfd5b9ce8
+Error Number:207,State:1,Class:16
+2024-01-22 02:18:14.030 [FTL] Path=/api/Report/employee/1/expenses || Method=GET || Exception=Invalid column name 'ExpenseClaims'.
+2024-01-22 02:18:17.455 [ERR] UnexpectedError
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ExpenseClaims'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1094
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at ExpensePaymentSystem.Business.Services.ReportService.GetEmployeeReport(Int32 employeeId) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Business\Services\ReportService.cs:line 27
+   at ReportController.GetEmployeeExpenseReport(Int32 employeeId) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Api\Controllers\ReportController.cs:line 18
+   at lambda_method14(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ExpensePaymentSystem.Api.Middleware.ErrorHandlerMiddleware.Invoke(HttpContext context, IServiceProvider IServiceProvider) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Api\Middleware\ErrorHandlerMiddleware.cs:line 25
+ClientConnectionId:42056fe7-387d-469b-941e-748cfd5b9ce8
+Error Number:207,State:1,Class:16
+2024-01-22 02:18:17.458 [FTL] Path=/api/Report/employee/3/expenses || Method=GET || Exception=Invalid column name 'ExpenseClaims'.
+2024-01-22 02:24:34.353 [INF] App server is starting.
+2024-01-22 02:24:35.039 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:24:35.040 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:24:35.040 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:24:35.040 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:24:35.040 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:24:35.040 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:24:35.040 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:24:43.195 [WRN] Failed to determine the https port for redirect.
+2024-01-22 02:25:30.116 [ERR] UnexpectedError
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near the keyword 'FROM'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.MultiMapImpl[TFirst,TSecond,TThird,TFourth,TFifth,TSixth,TSeventh,TReturn](IDbConnection cnn, CommandDefinition command, Delegate map, String splitOn, IDataReader reader, Identity identity, Boolean finalize)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1470
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.MultiMap[TFirst,TSecond,TThird,TFourth,TFifth,TSixth,TSeventh,TReturn](IDbConnection cnn, String sql, Delegate map, Object param, IDbTransaction transaction, Boolean buffered, String splitOn, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 1451
+   at Dapper.SqlMapper.Query[TFirst,TSecond,TReturn](IDbConnection cnn, String sql, Func`3 map, Object param, IDbTransaction transaction, Boolean buffered, String splitOn, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 1306
+   at ExpensePaymentSystem.Business.Services.ReportService.GetEmployeeReport(Int32 employeeId)
+   at ReportController.GetEmployeeExpenseReport(Int32 employeeId) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Api\Controllers\ReportController.cs:line 18
+   at lambda_method16(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ExpensePaymentSystem.Api.Middleware.ErrorHandlerMiddleware.Invoke(HttpContext context, IServiceProvider IServiceProvider) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Api\Middleware\ErrorHandlerMiddleware.cs:line 25
+ClientConnectionId:1006374b-d85e-4476-86cb-7631b8bd3ebc
+Error Number:156,State:1,Class:15
+2024-01-22 02:25:30.131 [FTL] Path=/api/Report/employee/4/expenses || Method=GET || Exception=Incorrect syntax near the keyword 'FROM'.
+2024-01-22 02:26:56.773 [INF] App server is starting.
+2024-01-22 02:26:57.430 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:26:57.431 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:26:57.431 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:26:57.431 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:26:57.431 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:26:57.431 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:26:57.431 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:27:07.004 [WRN] Failed to determine the https port for redirect.
+2024-01-22 02:31:40.997 [INF] App server is starting.
+2024-01-22 02:31:41.671 [WRN] The 'bool' property 'IsActive' on entity type 'Account' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:31:41.672 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:31:41.672 [WRN] The 'bool' property 'IsActive' on entity type 'Category' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:31:41.672 [WRN] The 'bool' property 'IsActive' on entity type 'Contact' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:31:41.672 [WRN] The 'bool' property 'IsActive' on entity type 'Employee' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:31:41.672 [WRN] The 'bool' property 'IsActive' on entity type 'ExpenseClaim' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:31:41.672 [WRN] The 'bool' property 'IsActive' on entity type 'PaymentMethod' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-01-22 02:31:51.200 [WRN] Failed to determine the https port for redirect.
+2024-01-22 02:31:51.349 [ERR] UnexpectedError
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '.'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.MultiMapImpl[TFirst,TSecond,TThird,TFourth,TFifth,TSixth,TSeventh,TReturn](IDbConnection cnn, CommandDefinition command, Delegate map, String splitOn, IDataReader reader, Identity identity, Boolean finalize)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1470
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.MultiMap[TFirst,TSecond,TThird,TFourth,TFifth,TSixth,TSeventh,TReturn](IDbConnection cnn, String sql, Delegate map, Object param, IDbTransaction transaction, Boolean buffered, String splitOn, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 1451
+   at Dapper.SqlMapper.Query[TFirst,TSecond,TReturn](IDbConnection cnn, String sql, Func`3 map, Object param, IDbTransaction transaction, Boolean buffered, String splitOn, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 1306
+   at ExpensePaymentSystem.Business.Services.ReportService.GetEmployeeReport(Int32 employeeId) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Business\Services\ReportService.cs:line 45
+   at ReportController.GetEmployeeExpenseReport(Int32 employeeId) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Api\Controllers\ReportController.cs:line 18
+   at lambda_method14(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ExpensePaymentSystem.Api.Middleware.ErrorHandlerMiddleware.Invoke(HttpContext context, IServiceProvider IServiceProvider) in C:\Users\Enes\Desktop\.Net\Final-Case\ExpensePaymentSystem\ExpensePaymentSystem.Api\Middleware\ErrorHandlerMiddleware.cs:line 25
+ClientConnectionId:bb7b1735-5cb0-4240-8253-0e6f2ad23eeb
+Error Number:102,State:1,Class:15
+2024-01-22 02:31:51.370 [FTL] Path=/api/Report/employee/3/expenses || Method=GET || Exception=Incorrect syntax near '.'.

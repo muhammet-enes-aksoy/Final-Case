@@ -4,7 +4,7 @@ public class EmployeeReportModel
     public int EmployeeId { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    // Diğer gerekli özellikleri ekleyin
+    public List<ExpenseClaimResponse> ExpenseClaimResponse { get; set; }
 }
 
 public class PaymentIntensityReportModel

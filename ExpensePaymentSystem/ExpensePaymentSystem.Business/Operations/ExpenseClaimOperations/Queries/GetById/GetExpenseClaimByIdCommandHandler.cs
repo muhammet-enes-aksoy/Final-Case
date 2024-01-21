@@ -3,6 +3,7 @@ using ExpensePaymentSystem.Base.Response;
 using ExpensePaymentSystem.Business.Constants;
 using ExpensePaymentSystem.Business.Cqrs;
 using ExpensePaymentSystem.Data;
+using ExpensePaymentSystem.Data.Entity;
 using ExpensePaymentSystem.Schema;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -11,28 +12,27 @@ namespace ExpensePaymentSystem.Business.Operations.ExpenseClaimOperations.Querie
 
 public class GetExpenseClaimByIdQueryHandler : IRequestHandler<GetExpenseClaimByIdQuery, ApiResponse<ExpenseClaimResponse>>
 {
-    private readonly ExpensePaymentSystemDbContext _context;
-    private readonly IMapper _mapper;
+    private readonly ExpensePaymentSystemDbContext context;
+    private readonly IMapper mapper;
 
     public GetExpenseClaimByIdQueryHandler(ExpensePaymentSystemDbContext context, IMapper mapper)
     {
-        _context = context;
-        _mapper = mapper;
+        this.context = context;
+        this.mapper = mapper;
     }
 
     public async Task<ApiResponse<ExpenseClaimResponse>> Handle(GetExpenseClaimByIdQuery request, CancellationToken cancellationToken)
     {
-        var ExpenseClaim = await _context.ExpenseClaims
+        var ExpenseClaim = await context.Set<ExpenseClaim>()
             .Include(x => x.Employee)
             .Include(x => x.Category)
             .Include(x => x.PaymentMethod)
-            .AsNoTracking()
-            .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
+            .FirstOrDefaultAsync(x => x.EmployeeId == request.Id, cancellationToken);
 
         if (ExpenseClaim == null)
             return new ApiResponse<ExpenseClaimResponse>(ExpenseClaimMessages.RecordNotExists);
 
-        var response = _mapper.Map<ExpenseClaimResponse>(ExpenseClaim);
+        var response = mapper.Map<ExpenseClaimResponse>(ExpenseClaim);
 
         return new ApiResponse<ExpenseClaimResponse>(response);
     }

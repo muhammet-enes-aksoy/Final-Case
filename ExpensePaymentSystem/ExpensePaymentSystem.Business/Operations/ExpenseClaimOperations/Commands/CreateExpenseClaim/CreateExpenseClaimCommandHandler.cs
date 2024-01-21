@@ -29,6 +29,8 @@ public class CreateExpenseClaimCommandHandler : IRequestHandler<CreateExpenseCla
 
         var ExpenseClaim = mapper.Map<ExpenseClaim>(request.Model);
         ExpenseClaim.EmployeeId = request.EmployeeId;
+        ExpenseClaim.PaymentMethodId = request.Model.PaymentMethodId;
+        ExpenseClaim.CategoryId = request.Model.CategoryId;
         await dbContext.ExpenseClaims.AddAsync(ExpenseClaim, cancellationToken);
         await dbContext.SaveChangesAsync(cancellationToken);
 

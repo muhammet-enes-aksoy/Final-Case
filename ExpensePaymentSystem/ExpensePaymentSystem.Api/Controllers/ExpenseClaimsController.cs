@@ -24,8 +24,8 @@ public class ExpenseClaimsController : ControllerBase
     [Authorize(Roles = "Employee")]
     public async Task<ApiResponse<ExpenseClaimResponse>> MyProfile()
     {
-        string id = (User.Identity as ClaimsIdentity).FindFirst("Id")?.Value;
-        var operation = new GetExpenseClaimByIdQuery(int.Parse(id));
+        int id = int.Parse((User.Identity as ClaimsIdentity).FindFirst("Id")?.Value);
+        var operation = new GetExpenseClaimByIdQuery(id);
         var result = await mediator.Send(operation);
         return result;
     }
@@ -52,7 +52,7 @@ public class ExpenseClaimsController : ControllerBase
     [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<List<ExpenseClaimResponse>>> GetByParameter(
         [FromQuery] int UserId,
-        [FromQuery] string? Status)
+        [FromQuery] int Status)
     {
         var operation = new GetAdminExpenseClaimsByParameterQuery(UserId,Status);
         var result = await mediator.Send(operation);
@@ -62,7 +62,7 @@ public class ExpenseClaimsController : ControllerBase
     [HttpGet("GetExpenseClaimsByParameter")]
     [Authorize(Roles = "Employee")]
     public async Task<ApiResponse<List<ExpenseClaimResponse>>> GetByParameter(
-        [FromQuery] string? Status,
+        [FromQuery] int Status,
         [FromQuery] bool IsProcessed)
     {
         int id = int.Parse((User.Identity as ClaimsIdentity).FindFirst("Id")?.Value);

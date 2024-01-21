@@ -5,6 +5,7 @@ using ExpensePaymentSystem.Business.Cqrs;
 using ExpensePaymentSystem.Data;
 using ExpensePaymentSystem.Data.Entity;
 using ExpensePaymentSystem.Schema;
+using ExpensePaymentSystem.Schema.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -38,10 +39,10 @@ public class UpdateExpenseClaimCommandHandler :
         // if the customer already has a default ExpenseClaim and the request model is default,
         // just returns a message
 
-        fromdb.Status = request.Model.Status;
+        ExpenseClaimStatus statusEnum = (ExpenseClaimStatus)request.Model.Status;
+        fromdb.Status = statusEnum.ToString();
         fromdb.StatusDescription = request.Model.StatusDescription;
         fromdb.ConfirmDate = DateTime.Now;
-        fromdb.IsProcessed = request.Model.IsProcessed;
         
         
 

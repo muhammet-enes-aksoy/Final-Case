@@ -2,6 +2,7 @@ using AutoMapper;
 using ExpensePaymentSystem.Business.Cqrs;
 using ExpensePaymentSystem.Data.Entity;
 using ExpensePaymentSystem.Schema;
+using ExpensePaymentSystem.Schema.Enums;
 
 
 namespace ExpensePaymentSystem.Business.Mapper;
@@ -34,6 +35,8 @@ public class MapperConfig : Profile
                 opt => opt.MapFrom(src => src.Category.CategoryType.ToString()))
             .ForMember(dest => dest.PaymentMethod, 
                 opt => opt.MapFrom(src => src.PaymentMethod.PaymentMethodType.ToString()))
+            .ForMember(dest => dest.Status, 
+                opt => opt.MapFrom(src => Enum.Parse<ExpenseClaimStatus>(src.Status)))
             .ForMember(dest => dest.EmployeeName,
                 src => src.MapFrom(x => x.Employee.FirstName + " " + x.Employee.LastName));
             

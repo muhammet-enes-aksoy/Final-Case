@@ -333,12 +333,12 @@ namespace ExpensePaymentSystem.Data.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("ClaimDate")
+                    b.Property<DateTime?>("ClaimDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 1, 21, 16, 52, 16, 484, DateTimeKind.Local).AddTicks(4795));
+                        .HasDefaultValue(new DateTime(2024, 1, 21, 22, 23, 2, 109, DateTimeKind.Local).AddTicks(9901));
 
-                    b.Property<DateTime>("ConfirmDate")
+                    b.Property<DateTime?>("ConfirmDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("EmployeeId")
@@ -380,9 +380,9 @@ namespace ExpensePaymentSystem.Data.Migrations
 
                     b.Property<string>("Status")
                         .ValueGeneratedOnAdd()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasDefaultValue("On hold");
+                        .HasMaxLength(1)
+                        .HasColumnType("nvarchar(1)")
+                        .HasDefaultValue("1");
 
                     b.Property<string>("StatusDescription")
                         .ValueGeneratedOnAdd()

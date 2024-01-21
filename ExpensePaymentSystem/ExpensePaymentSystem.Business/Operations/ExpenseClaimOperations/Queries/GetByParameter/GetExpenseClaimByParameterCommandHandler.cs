@@ -4,6 +4,7 @@ using ExpensePaymentSystem.Business.Cqrs;
 using ExpensePaymentSystem.Data;
 using ExpensePaymentSystem.Data.Entity;
 using ExpensePaymentSystem.Schema;
+using ExpensePaymentSystem.Schema.Enums;
 using LinqKit;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -25,10 +26,11 @@ public class GetExpenseClaimByParameterQueryHandler :
 
     public async Task<ApiResponse<List<ExpenseClaimResponse>>> Handle(GetAdminExpenseClaimsByParameterQuery request, CancellationToken cancellationToken)
     {
+        var tempStatus = ((ExpenseClaimStatus)request.Status).ToString();
         var predicate = PredicateBuilder.New<ExpenseClaim>(true);
         predicate.And(
             c => (request.EmployeeId.Equals(0) || c.EmployeeId.Equals(request.EmployeeId)) &&
-                 (request.Status == null || c.Status.ToUpper().Contains(request.Status.ToUpper())));
+                 (request.Status == 0 ||  c.Status.ToUpper().Contains(tempStatus.ToUpper())));
 
         var list = await context.Set<ExpenseClaim>()
             .Include(x => x.Employee)
@@ -42,12 +44,12 @@ public class GetExpenseClaimByParameterQueryHandler :
 
     public async Task<ApiResponse<List<ExpenseClaimResponse>>> Handle(GetEmployeeExpenseClaimsByParameterQuery request, CancellationToken cancellationToken)
     {
-        
+        var tempStatus = ((ExpenseClaimStatus)request.Status).ToString();
         var predicate = PredicateBuilder.New<ExpenseClaim>(true);
         predicate.And(
             c => (request.EmployeeId.Equals(0) || c.EmployeeId.Equals(request.EmployeeId)) &&
                  (request.IsProcessed == null || c.IsProcessed.Equals(request.IsProcessed)) &&
-                 (request.Status == null || c.Status.ToUpper().Contains(request.Status.ToUpper())));
+                 (request.Status == 0 ||  c.Status.ToUpper().Contains(tempStatus.ToUpper())));
         
         var list = await context.Set<ExpenseClaim>()
             .Include(x => x.Employee)

@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using ExpensePaymentSystem.Base.Schema;
+using ExpensePaymentSystem.Schema.Enums;
 
 namespace ExpensePaymentSystem.Schema;
 public class EmployeeExpenseClaimRequest : BaseRequest
@@ -19,10 +20,8 @@ public class AdminExpenseClaimRequest : BaseRequest
     [JsonIgnore]
     public int Id { get; set; }
     public int EmployeeId { get; set; }
-    public string Status { get; set; }
+    public int Status { get; set; }
     public string StatusDescription { get; set; }
-    public bool IsProcessed { get; set; }
-    public DateTime ConfirmDate { get; set; }
     public bool IsDefault { get; set; }
 }
 public class ExpenseClaimResponse : BaseResponse

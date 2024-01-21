@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using ExpensePaymentSystem.Base.Response;
 using ExpensePaymentSystem.Business.Cqrs;
 using ExpensePaymentSystem.Schema;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 
 namespace ExpensePaymentSystem.Api.Controllers;
@@ -19,16 +21,17 @@ public class EmployeesController : ControllerBase
     }
 
     
-    /*[HttpGet("MyProfile")]
+    [HttpGet("MyAddresses")]
+    [Authorize(Roles = "Employee, admin")]
     public async Task<ApiResponse<EmployeeResponse>> MyProfile()
     {
-        string id = (Employee.Identity as ClaimsIdentity).FindFirst("Id")?.Value;
+        string id = (User.Identity as ClaimsIdentity).FindFirst("Id")?.Value;
         var operation = new GetEmployeeByIdQuery(int.Parse(id));
         var result = await mediator.Send(operation);
         return result;
-    }*/
-    
+    }
     [HttpGet]
+    [Authorize(Roles = "Employee, Admin")]
     public async Task<ApiResponse<List<EmployeeResponse>>> Get()
     {
         var operation = new GetAllEmployeeQuery();
@@ -37,6 +40,7 @@ public class EmployeesController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<EmployeeResponse>> Get(int id)
     {
         var operation = new GetEmployeeByIdQuery(id);
@@ -45,6 +49,7 @@ public class EmployeesController : ControllerBase
     }
 
     [HttpGet("ByParameters")]
+    [Authorize(Roles = "Employee, Admin")]
     public async Task<ApiResponse<List<EmployeeResponse>>> GetByParameter(
         [FromQuery] string? FirstName,
         [FromQuery] string? LastName)
@@ -55,6 +60,7 @@ public class EmployeesController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Employee, Admin")]
     public async Task<ApiResponse<EmployeeResponse>> Post([FromBody] EmployeeRequest Employee)
     {
         var operation = new CreateEmployeeCommand(Employee);
@@ -63,6 +69,7 @@ public class EmployeesController : ControllerBase
     }
 
     [HttpPut("{id}")]
+    [Authorize(Roles = "Employee, Admin")]
     public async Task<ApiResponse> Put(int id, [FromBody] EmployeeRequest Employee)
     {
         var operation = new UpdateEmployeeCommand(id,Employee );
@@ -71,6 +78,7 @@ public class EmployeesController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Employee, Admin")]
     public async Task<ApiResponse> Delete(int id)
     {
         var operation = new DeleteEmployeeCommand(id);

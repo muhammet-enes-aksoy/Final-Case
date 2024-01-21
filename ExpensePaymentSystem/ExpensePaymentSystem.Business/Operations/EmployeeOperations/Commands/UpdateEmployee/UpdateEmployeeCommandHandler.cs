@@ -31,7 +31,6 @@ public class UpdateEmployeeCommandHandler : IRequestHandler<UpdateEmployeeComman
         
         fromdb.FirstName = request.Model.FirstName;
         fromdb.LastName = request.Model.LastName;
-        fromdb.Role = request.Model.Role;
         
         await dbContext.SaveChangesAsync(cancellationToken);
         return new ApiResponse();

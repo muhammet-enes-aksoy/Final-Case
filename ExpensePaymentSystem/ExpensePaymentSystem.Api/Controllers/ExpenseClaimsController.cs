@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using ExpensePaymentSystem.Base.Response;
 using ExpensePaymentSystem.Business.Cqrs;
 using ExpensePaymentSystem.Schema;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 
 namespace ExpensePaymentSystem.Api.Controllers;
@@ -17,7 +19,16 @@ public class ExpenseClaimsController : ControllerBase
     {
         this.mediator = mediator;
     }
-    
+
+    [HttpGet("MyExpenseClaims")]
+    [Authorize(Roles = "Employee")]
+    public async Task<ApiResponse<ExpenseClaimResponse>> MyProfile()
+    {
+        string id = (User.Identity as ClaimsIdentity).FindFirst("Id")?.Value;
+        var operation = new GetExpenseClaimByIdQuery(int.Parse(id));
+        var result = await mediator.Send(operation);
+        return result;
+    }
     [HttpGet]
     public async Task<ApiResponse<List<ExpenseClaimResponse>>> Get()
     {

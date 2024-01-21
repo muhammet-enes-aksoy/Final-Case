@@ -1,7 +1,9 @@
+using System.Security.Claims;
 using ExpensePaymentSystem.Base.Response;
 using ExpensePaymentSystem.Business.Cqrs;
 using ExpensePaymentSystem.Schema;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExpensePaymentSystem.Api.Controllers;
@@ -16,8 +18,18 @@ public class AccountsController : ControllerBase
         this.mediator = mediator;
     }
 
+    [HttpGet("MyAddresses")]
+    [Authorize(Roles = "Employee, Admin")]
+    public async Task<ApiResponse<AccountResponse>> MyProfile()
+    {
+        string id = (User.Identity as ClaimsIdentity).FindFirst("Id")?.Value;
+        var operation = new GetAccountByIdQuery(int.Parse(id));
+        var result = await mediator.Send(operation);
+        return result;
+    }
+
     [HttpGet]
-    
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<List<AccountResponse>>> Get()
     {
         var operation = new GetAllAccountsQuery();
@@ -26,6 +38,7 @@ public class AccountsController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<AccountResponse>> Get(int id)
     {
         var operation = new GetAccountByIdQuery(id);
@@ -34,6 +47,7 @@ public class AccountsController : ControllerBase
     }
 
     [HttpGet("ByParameters")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<List<AccountResponse>>> GetByParameter(
         [FromQuery] int CustomerId,
         [FromQuery] string? IBAN)
@@ -44,6 +58,7 @@ public class AccountsController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Admin, Employee")]
     public async Task<ApiResponse<AccountResponse>> Post([FromBody] AccountRequest Account)
     {
         var operation = new CreateAccountCommand(Account);
@@ -52,6 +67,7 @@ public class AccountsController : ControllerBase
     }
 
     [HttpPut("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse> Put(int id, [FromBody] AccountRequest Account)
     {
         var operation = new UpdateAccountCommand(id, Account);
@@ -60,6 +76,7 @@ public class AccountsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse> Delete(int id)
     {
         var operation = new DeleteAccountCommand(id);

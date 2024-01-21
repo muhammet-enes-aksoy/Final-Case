@@ -36,6 +36,7 @@ public class MapperConfig : Profile
                 opt => opt.MapFrom(src => src.PaymentMethod.PaymentMethodType.ToString()))
             .ForMember(dest => dest.EmployeeName,
                 src => src.MapFrom(x => x.Employee.FirstName + " " + x.Employee.LastName));
+            
 
         CreateMap<PaymentMethodRequest, PaymentMethod>();
         CreateMap<PaymentMethod, PaymentMethodResponse>();

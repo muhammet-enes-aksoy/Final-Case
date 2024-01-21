@@ -10,9 +10,7 @@ public class EmployeeExpenseClaimRequest : BaseRequest
     public int PaymentMethodId { get; set; }
     public string PaymentLocation { get; set; }
     public string ReceiptNumber { get; set; }
-    public DateTime ConfirmDate { get; set; }
-    public DateTime ClaimDate { get; set; }
-    public double Amount { get; set; }
+    public decimal Amount { get; set; }
     public bool IsDefault { get; set; }
 }
 

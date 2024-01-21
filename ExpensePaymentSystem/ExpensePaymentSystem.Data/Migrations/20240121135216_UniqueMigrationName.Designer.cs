@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExpensePaymentSystem.Data.Migrations
 {
     [DbContext(typeof(ExpensePaymentSystemDbContext))]
-    [Migration("20240121132154_UniqueMigrationName")]
+    [Migration("20240121135216_UniqueMigrationName")]
     partial class UniqueMigrationName
     {
         /// <inheritdoc />
@@ -337,7 +337,9 @@ namespace ExpensePaymentSystem.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ClaimDate")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2024, 1, 21, 16, 52, 16, 484, DateTimeKind.Local).AddTicks(4795));
 
                     b.Property<DateTime>("ConfirmDate")
                         .HasColumnType("datetime2");
@@ -380,14 +382,16 @@ namespace ExpensePaymentSystem.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Status")
-                        .IsRequired()
+                        .ValueGeneratedOnAdd()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("On hold");
 
                     b.Property<string>("StatusDescription")
-                        .IsRequired()
+                        .ValueGeneratedOnAdd()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("StatusDescription");
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");

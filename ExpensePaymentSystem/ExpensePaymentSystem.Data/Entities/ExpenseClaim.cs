@@ -42,12 +42,12 @@ public class ExpenseClaimConfiguration : IEntityTypeConfiguration<ExpenseClaim>
         builder.Property(x => x.PaymentMethodId).IsRequired(true);
         builder.Property(x => x.PaymentLocation).IsRequired(true).HasMaxLength(50);
         builder.Property(x => x.ReceiptNumber).IsRequired(true).HasMaxLength(50);
-        builder.Property(x => x.Status).IsRequired(true).HasMaxLength(50);
-        builder.Property(x => x.StatusDescription).IsRequired(true).HasMaxLength(50);
+        builder.Property(x => x.Status).IsRequired(false).HasMaxLength(50).HasDefaultValue("On hold");
+        builder.Property(x => x.StatusDescription).IsRequired(false).HasMaxLength(50).HasDefaultValue("StatusDescription");
         builder.Property(x => x.IsProcessed).IsRequired(true).HasDefaultValue(false);
         builder.Property(x => x.Amount).IsRequired(true).HasPrecision(18, 4);
         builder.Property(x => x.IsDefault).IsRequired(true).HasDefaultValue(false);
-        builder.Property(x => x.ClaimDate).IsRequired(true);
+        builder.Property(x => x.ClaimDate).IsRequired(true).HasDefaultValue(DateTime.Now);
         builder.Property(x => x.ConfirmDate).IsRequired(true);
 
         builder.HasIndex(x => x.EmployeeId);

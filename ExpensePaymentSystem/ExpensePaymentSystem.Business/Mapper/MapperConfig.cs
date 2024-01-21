@@ -28,7 +28,7 @@ public class MapperConfig : Profile
             .ForMember(dest => dest.EmployeeName,
                 src => src.MapFrom(x => x.Employee.FirstName + " " + x.Employee.LastName));
 
-        CreateMap<ExpenseClaimRequest, ExpenseClaim>();
+        CreateMap<EmployeeExpenseClaimRequest, ExpenseClaim>();
         CreateMap<ExpenseClaim, ExpenseClaimResponse>()
             .ForMember(dest => dest.Category, 
                 opt => opt.MapFrom(src => src.Category.CategoryType.ToString()))

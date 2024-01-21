@@ -57,15 +57,17 @@ public class ExpenseClaimsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ApiResponse<ExpenseClaimResponse>> Post([FromBody] ExpenseClaimRequest ExpenseClaim)
+    [Authorize(Roles = "Employee")]
+    public async Task<ApiResponse<ExpenseClaimResponse>> Post([FromBody] EmployeeExpenseClaimRequest ExpenseClaim)
     {
-        var operation = new CreateExpenseClaimCommand(ExpenseClaim);
+        int id = int.Parse((User.Identity as ClaimsIdentity).FindFirst("Id")?.Value);
+        var operation = new CreateExpenseClaimCommand(id, ExpenseClaim);
         var result = await mediator.Send(operation);
         return result;
     }
-
+    
     [HttpPut("{id}")]
-    public async Task<ApiResponse> Put(int id, [FromBody] ExpenseClaimRequest ExpenseClaim)
+    public async Task<ApiResponse> Put(int id, [FromBody] AdminExpenseClaimRequest ExpenseClaim)
     {
         var operation = new UpdateExpenseClaimCommand(id,ExpenseClaim );
         var result = await mediator.Send(operation);

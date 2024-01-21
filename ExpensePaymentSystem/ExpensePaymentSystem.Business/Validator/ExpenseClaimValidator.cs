@@ -3,7 +3,7 @@ using ExpensePaymentSystem.Schema;
 using FluentValidation;
 
 namespace ExpensePaymentSystem.Business.Validator;
-public class ExpenseClaimValidator : AbstractValidator<ExpenseClaimRequest>
+public class ExpenseClaimValidator : AbstractValidator<EmployeeExpenseClaimRequest>
 {
     public ExpenseClaimValidator()
     {

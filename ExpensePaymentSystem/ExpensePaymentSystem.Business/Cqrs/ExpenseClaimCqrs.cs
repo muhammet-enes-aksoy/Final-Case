@@ -3,8 +3,8 @@ using ExpensePaymentSystem.Schema;
 using MediatR;
 
 namespace ExpensePaymentSystem.Business.Cqrs;
-public record CreateExpenseClaimCommand(ExpenseClaimRequest Model) : IRequest<ApiResponse<ExpenseClaimResponse>>;
-public record UpdateExpenseClaimCommand(int Id, ExpenseClaimRequest Model) : IRequest<ApiResponse>;
+public record CreateExpenseClaimCommand(int EmployeeId, EmployeeExpenseClaimRequest Model) : IRequest<ApiResponse<ExpenseClaimResponse>>;
+public record UpdateExpenseClaimCommand(int Id, AdminExpenseClaimRequest Model) : IRequest<ApiResponse>;
 public record DeleteExpenseClaimCommand(int Id) : IRequest<ApiResponse>;
 
 public record GetAllExpenseClaimsQuery() : IRequest<ApiResponse<List<ExpenseClaimResponse>>>;

@@ -11,9 +11,6 @@ namespace ExpensePaymentSystem.Business.Validator
             // EmployeeId should be greater than 0
             RuleFor(x => x.EmployeeId).GreaterThan(0).WithMessage("EmployeeId must be greater than 0");
 
-            // AccountNumber should be greater than 0
-            RuleFor(x => x.AccountNumber).GreaterThan(0).WithMessage("AccountNumber must be greater than 0");
-
             // IBAN is required and should have a maximum length of 34 characters
             RuleFor(x => x.IBAN).NotEmpty().MaximumLength(34).WithMessage("IBAN is required and should have a maximum length of 34 characters");
 

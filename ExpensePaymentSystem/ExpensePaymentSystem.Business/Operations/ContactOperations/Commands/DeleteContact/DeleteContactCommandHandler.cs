@@ -30,6 +30,6 @@ public class DeleteContactCommandHandler : IRequestHandler<DeleteContactCommand,
         contact.IsActive = false;
         await context.SaveChangesAsync(cancellationToken);
 
-        return new ApiResponse();
+        return new ApiResponse("Contact deleted!");
     }
 }

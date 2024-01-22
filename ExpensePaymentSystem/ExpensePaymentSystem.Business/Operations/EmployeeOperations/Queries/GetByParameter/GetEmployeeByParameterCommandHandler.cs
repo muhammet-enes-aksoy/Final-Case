@@ -24,20 +24,21 @@ public class GetEmployeeByParameterCommandHandler : IRequestHandler<GetEmployeeB
         CancellationToken cancellationToken)
     {
         var predicate = PredicateBuilder.New<Employee>(true);
-        if (string.IsNullOrEmpty(request.FirstName))
-            predicate.And(x => x.FirstName.ToUpper().Contains(request.FirstName.ToUpper()));
-        if (string.IsNullOrEmpty(request.LastName))
-            predicate.And(x => x.LastName.ToUpper().Contains(request.LastName.ToUpper()));
-        
-        
-        var list =  await dbContext.Set<Employee>()
+        if (!string.IsNullOrEmpty(request.FirstName))
+            predicate = predicate.And(x => x.FirstName.ToUpper().Contains(request.FirstName.ToUpper()));
+
+        if (!string.IsNullOrEmpty(request.LastName))
+            predicate = predicate.And(x => x.LastName.ToUpper().Contains(request.LastName.ToUpper()));
+
+
+        var list = await dbContext.Set<Employee>()
             .Include(x => x.Accounts)
             .Include(x => x.Addresses)
             .Include(x => x.Contacts)
-            .Include(x => x.ExpenseClaims)   
+            .Include(x => x.ExpenseClaims)
             .Where(u => u.IsActive)
             .Where(predicate).ToListAsync(cancellationToken);
-        
+
         var mappedList = mapper.Map<List<Employee>, List<EmployeeResponse>>(list);
         return new ApiResponse<List<EmployeeResponse>>(mappedList);
     }

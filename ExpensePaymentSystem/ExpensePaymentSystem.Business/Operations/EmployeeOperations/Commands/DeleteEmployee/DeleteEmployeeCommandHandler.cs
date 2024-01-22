@@ -32,6 +32,6 @@ public class DeleteEmployeeCommandHandler : IRequestHandler<DeleteEmployeeComman
         
         fromdb.IsActive = false;
         await dbContext.SaveChangesAsync(cancellationToken);
-        return new ApiResponse();
+        return new ApiResponse("Employee deleted!");
     }
 }

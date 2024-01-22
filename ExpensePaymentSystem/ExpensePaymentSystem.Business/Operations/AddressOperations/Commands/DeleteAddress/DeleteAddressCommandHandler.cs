@@ -30,6 +30,6 @@ public class DeleteAddressCommandHandler : IRequestHandler<DeleteAddressCommand,
 
         fromdb.IsActive = false;
         await dbContext.SaveChangesAsync(cancellationToken);
-        return new ApiResponse();
+        return new ApiResponse("Address deleted!");
     }
 }

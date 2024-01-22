@@ -77,7 +77,7 @@ public class EmployeesController : ControllerBase
         return result;
     }
 
-    [HttpPut("UdateMyProfile")]
+    [HttpPut("UpdateMyProfile")]
     [Authorize(Roles = "Employee")]
     public async Task<ApiResponse> Put([FromBody] EmployeeRequest Employee)
     {

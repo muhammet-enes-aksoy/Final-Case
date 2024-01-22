@@ -33,12 +33,12 @@ public class PaymentSimulationService
                         employee.Accounts
                 }       */                     
                 dbContext.SaveChanges();
-                Log.Error($"Ödeme simülasyonu başarılı. Talep ID: {claim.Id}");
+                Log.Information($"Payment payment successful. Request ID: {claim.Id}");
             }
             else
             {
                 // Hata durumunu logla veya başka bir işlem gerçekleştir
-                Log.Error($"Ödeme simülasyonu başarısız. Talep ID: {claim.Id}");
+                Log.Error($"Payment payment failed. Request ID:: {claim.Id}");
                 // Alternatif olarak başka bir işlem gerçekleştirebilirsiniz.
             }
 

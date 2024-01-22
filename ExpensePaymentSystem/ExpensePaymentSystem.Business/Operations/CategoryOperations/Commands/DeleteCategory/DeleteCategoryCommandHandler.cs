@@ -1,3 +1,4 @@
+using System.Data.Entity;
 using AutoMapper;
 using ExpensePaymentSystem.Base.Response;
 using ExpensePaymentSystem.Business.Constants;
@@ -30,6 +31,6 @@ public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryComman
         Category.IsActive = false;
         await context.SaveChangesAsync(cancellationToken);
 
-        return new ApiResponse();
+        return new ApiResponse("Category deleted!");
     }
 }

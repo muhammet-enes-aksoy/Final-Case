@@ -30,6 +30,6 @@ public class DeleteAccountCommandHandler : IRequestHandler<DeleteAccountCommand,
         
         entity.IsActive = false;
         await dbContext.SaveChangesAsync(cancellationToken);
-        return new ApiResponse();
+        return new ApiResponse("Account deleted!");
     }
 }

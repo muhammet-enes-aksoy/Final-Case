@@ -13,7 +13,7 @@ public class ReportController : ControllerBase
         _reportService = reportService;
     }
 
-    [HttpGet("employee/{employeeId}/expenses")]
+    [HttpGet("{employeeId}/ExpensesReport")]
     [Authorize(Roles = "Admin")]
     public IActionResult GetEmployeeExpenseReport(int employeeId)
     {
@@ -21,7 +21,7 @@ public class ReportController : ControllerBase
         return Ok(report);
     }
 
-    [HttpGet("payment-intensity")]
+    [HttpGet("PaymentIntensity")]
     [Authorize(Roles = "Admin")]
     public IActionResult GetPaymentIntensityReport(DateTime startDate, DateTime endDate)
     {
@@ -29,7 +29,7 @@ public class ReportController : ControllerBase
         return Ok(report);
     }
 
-    [HttpGet("employee/{employeeId}/payment-intensity")]
+    [HttpGet("{employeeId}/PaymentIntensity")]
     [Authorize(Roles = "Admin")]
     public IActionResult GetEmployeePaymentIntensityReport(int employeeId, DateTime startDate, DateTime endDate)
     {
@@ -37,7 +37,7 @@ public class ReportController : ControllerBase
         return Ok(report);
     }
 
-    [HttpGet("approval-status")]
+    [HttpGet("ApprovalStatus")]
     [Authorize(Roles = "Admin")]
     public IActionResult GetApprovalStatusReport(DateTime startDate, DateTime endDate)
     {

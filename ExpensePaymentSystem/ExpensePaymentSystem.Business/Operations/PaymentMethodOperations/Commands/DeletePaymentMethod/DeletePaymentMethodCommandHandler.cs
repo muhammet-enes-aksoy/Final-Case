@@ -30,6 +30,6 @@ public class DeletePaymentMethodCommandHandler : IRequestHandler<DeletePaymentMe
         PaymentMethod.IsActive = false;
         await context.SaveChangesAsync(cancellationToken);
 
-        return new ApiResponse();
+        return new ApiResponse("Payment method deleted!");
     }
 }

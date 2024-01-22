@@ -30,6 +30,6 @@ public class DeleteExpenseClaimCommandHandler : IRequestHandler<DeleteExpenseCla
         ExpenseClaim.IsActive = false;
         await context.SaveChangesAsync(cancellationToken);
 
-        return new ApiResponse();
+        return new ApiResponse("Expense claim deleted!");
     }
 }

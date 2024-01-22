@@ -3,10 +3,12 @@ using ExpensePaymentSystem.Schema;
 using FluentValidation;
 
 namespace ExpensePaymentSystem.Business.Validator;
-public class CategoryValidator : AbstractValidator<CategoryRequest>
+public class CreateCategoryValidator : AbstractValidator<CategoryRequest>
 {
-    public CategoryValidator()
+    // Validator class for CategoryRequest
+    public CreateCategoryValidator()
     {
+        // CategoryType is required and should have a maximum length of 50 characters
         RuleFor(c => c.CategoryType).NotEmpty()
             .WithMessage(CategoryMessages.CategoryTypeIsRequired)
             .MaximumLength(100)

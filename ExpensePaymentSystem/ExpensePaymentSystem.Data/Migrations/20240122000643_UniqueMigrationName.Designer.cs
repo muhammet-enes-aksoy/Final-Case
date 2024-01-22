@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExpensePaymentSystem.Data.Migrations
 {
     [DbContext(typeof(ExpensePaymentSystemDbContext))]
-    [Migration("20240121192302_UniqueMigrationName")]
+    [Migration("20240122000643_UniqueMigrationName")]
     partial class UniqueMigrationName
     {
         /// <inheritdoc />
@@ -339,7 +339,7 @@ namespace ExpensePaymentSystem.Data.Migrations
                     b.Property<DateTime?>("ClaimDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 1, 21, 22, 23, 2, 109, DateTimeKind.Local).AddTicks(9901));
+                        .HasDefaultValue(new DateTime(2024, 1, 22, 3, 6, 43, 917, DateTimeKind.Local).AddTicks(4744));
 
                     b.Property<DateTime?>("ConfirmDate")
                         .HasColumnType("datetime2");
@@ -383,8 +383,8 @@ namespace ExpensePaymentSystem.Data.Migrations
 
                     b.Property<string>("Status")
                         .ValueGeneratedOnAdd()
-                        .HasMaxLength(1)
-                        .HasColumnType("nvarchar(1)")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
                         .HasDefaultValue("1");
 
                     b.Property<string>("StatusDescription")

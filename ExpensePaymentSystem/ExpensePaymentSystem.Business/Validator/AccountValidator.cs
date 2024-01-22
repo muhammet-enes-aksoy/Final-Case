@@ -12,7 +12,7 @@ public class AccountValidator : AbstractValidator<AccountRequest>
 
         RuleFor(acc => acc.IBAN).NotEmpty()
             .WithMessage(AccountMessages.IbanNotEmpty)
-            .Length(18)
+            .Length(26)
             .WithMessage(AccountMessages.IbanLength);
 
         RuleFor(acc => acc.Name).NotEmpty()

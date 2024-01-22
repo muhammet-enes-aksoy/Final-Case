@@ -112,6 +112,13 @@ namespace ExpensePaymentSystem.Api
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "ExpensePaymentSystem v1");
                 });
             }
+            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                var dbContext = serviceScope.ServiceProvider.GetRequiredService<ExpensePaymentSystemDbContext>();
+                dbContext.Database.Migrate(); // Veritabanını güncelle
+
+                SeedData.Initialize(serviceScope.ServiceProvider);
+            }
             app.UseMiddleware<HeartBeatMiddleware>();
             app.UseMiddleware<ErrorHandlerMiddleware>();
             var backgroundService = app.ApplicationServices.GetRequiredService<PaymentSimulationBackgroundService>();

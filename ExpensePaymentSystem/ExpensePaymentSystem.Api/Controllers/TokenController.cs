@@ -25,7 +25,7 @@ public class TokenController : ControllerBase
     [TypeFilter(typeof(LogResourceFilter))]
     [TypeFilter(typeof(LogExceptionFilter))]*/
 
-    [HttpPost]
+    [HttpPost("Authentication")]
     public async Task<ApiResponse<TokenResponse>> Post([FromBody] TokenRequest request)
     {
         var operation = new CreateTokenCommand(request);

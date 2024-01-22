@@ -30,6 +30,7 @@ public class AddresssController : ControllerBase
         return result;
     }
     [HttpGet]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<List<AddressResponse>>> Get()
     {
         var operation = new GetAllAddressesQuery();
@@ -38,6 +39,7 @@ public class AddresssController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<AddressResponse>> Get(int id)
     {
         var operation = new GetAddressByIdQuery(id);
@@ -46,6 +48,7 @@ public class AddresssController : ControllerBase
     }
 
     [HttpGet("ByParameters")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<List<AddressResponse>>> GetByParameter(
         [FromQuery] int UserId,
         [FromQuery] string? County,
@@ -57,6 +60,7 @@ public class AddresssController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Employee, Admin")]
     public async Task<ApiResponse<AddressResponse>> Post([FromBody] AddressRequest Address)
     {
         var operation = new CreateAddressCommand(Address);
@@ -65,6 +69,7 @@ public class AddresssController : ControllerBase
     }
 
     [HttpPut("{id}")]
+    [Authorize(Roles = "Employee, Admin")]
     public async Task<ApiResponse> Put(int id, [FromBody] AddressRequest Address)
     {
         var operation = new UpdateAddressCommand(id, Address);
@@ -73,6 +78,7 @@ public class AddresssController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse> Delete(int id)
     {
         var operation = new DeleteAddressCommand(id);

@@ -31,6 +31,7 @@ public class ContactsController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<List<ContactResponse>>> Get()
     {
         var operation = new GetAllContactsQuery();
@@ -39,6 +40,7 @@ public class ContactsController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<ContactResponse>> Get(int id)
     {
         var operation = new GetContactByIdQuery(id);
@@ -47,6 +49,7 @@ public class ContactsController : ControllerBase
     }
 
     [HttpGet("ByParameters")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse<List<ContactResponse>>> GetByParameter(
         [FromQuery] int UserId,
         [FromQuery] string? ContactType,
@@ -58,6 +61,7 @@ public class ContactsController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Employee, Admin")]
     public async Task<ApiResponse<ContactResponse>> Post([FromBody] ContactRequest Contact)
     {
         var operation = new CreateContactCommand(Contact);
@@ -66,6 +70,7 @@ public class ContactsController : ControllerBase
     }
 
     [HttpPut("{id}")]
+    [Authorize(Roles = "Employee, Admin")]
     public async Task<ApiResponse> Put(int id, [FromBody] ContactRequest Contact)
     {
         var operation = new UpdateContactCommand(id, Contact);
@@ -74,6 +79,7 @@ public class ContactsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ApiResponse> Delete(int id)
     {
         var operation = new DeleteContactCommand(id);

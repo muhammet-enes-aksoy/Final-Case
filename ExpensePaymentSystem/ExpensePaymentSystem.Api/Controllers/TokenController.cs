@@ -17,13 +17,6 @@ public class TokenController : ControllerBase
     {
         this.mediator = mediator;
     }
-    
-  /*          
-    [TypeFilter(typeof(LogResourceFilter))]
-    [TypeFilter(typeof(LogActionFilter))]
-    [TypeFilter(typeof(LogAuthorizationFilter))]
-    [TypeFilter(typeof(LogResourceFilter))]
-    [TypeFilter(typeof(LogExceptionFilter))]*/
 
     [HttpPost("Authentication")]
     public async Task<ApiResponse<TokenResponse>> Post([FromBody] TokenRequest request)

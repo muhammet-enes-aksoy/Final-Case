@@ -1,4 +1,5 @@
 using ExpensePaymentSystem.Business.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
@@ -13,6 +14,7 @@ public class ReportController : ControllerBase
     }
 
     [HttpGet("employee/{employeeId}/expenses")]
+    [Authorize(Roles = "Admin")]
     public IActionResult GetEmployeeExpenseReport(int employeeId)
     {
         var report = _reportService.GetEmployeeReport(employeeId);
@@ -20,6 +22,7 @@ public class ReportController : ControllerBase
     }
 
     [HttpGet("payment-intensity")]
+    [Authorize(Roles = "Admin")]
     public IActionResult GetPaymentIntensityReport(DateTime startDate, DateTime endDate)
     {
         var report = _reportService.GetPaymentIntensityReport(startDate, endDate);
@@ -27,6 +30,7 @@ public class ReportController : ControllerBase
     }
 
     [HttpGet("employee/{employeeId}/payment-intensity")]
+    [Authorize(Roles = "Admin")]
     public IActionResult GetEmployeePaymentIntensityReport(int employeeId, DateTime startDate, DateTime endDate)
     {
         var report = _reportService.GetEmployeePaymentIntensityReport(employeeId, startDate, endDate);
@@ -34,6 +38,7 @@ public class ReportController : ControllerBase
     }
 
     [HttpGet("approval-status")]
+    [Authorize(Roles = "Admin")]
     public IActionResult GetApprovalStatusReport(DateTime startDate, DateTime endDate)
     {
         var report = _reportService.GetApprovalStatusReport(startDate, endDate);
